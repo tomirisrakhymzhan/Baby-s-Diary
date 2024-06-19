@@ -7,16 +7,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class OnboardingViewController: UIViewController {
 
-    lazy var imageView: UIImageView = {
+    private(set) lazy var imageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "baby-icon"))
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
 
-    lazy var titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Hi there!"
         label.textAlignment = .center
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         return label
     }()
 
-    lazy var subTitleLabel: UILabel = {
+    private lazy var subTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ex."
         label.numberOfLines = 0
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         return label
     }()
 
-    lazy var labelsStackView: UIStackView = {
+    private lazy var labelsStackView: UIStackView = {
         let sv = UIStackView(arrangedSubviews: [titleLabel, subTitleLabel])
         sv.translatesAutoresizingMaskIntoConstraints = false
         sv.axis = .vertical
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         return sv
     }()
 
-    lazy var mainStackView: UIStackView = {
+    private lazy var mainStackView: UIStackView = {
         let sv = UIStackView(arrangedSubviews: [imageView, labelsStackView])
         sv.translatesAutoresizingMaskIntoConstraints = false
         sv.axis = .vertical
@@ -66,17 +66,19 @@ class ViewController: UIViewController {
     }
 
     func setupConstraints() {
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        subTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        labelsStackView.translatesAutoresizingMaskIntoConstraints = false
+        mainStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             mainStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            mainStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            NSLayoutConstraint(item: mainStackView, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 0.8, constant: 0),
             mainStackView.leadingAnchor.constraint(greaterThanOrEqualTo: view.leadingAnchor, constant: 20),
             mainStackView.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -20),
             
             imageView.heightAnchor.constraint(equalToConstant: 200),
-            imageView.widthAnchor.constraint(equalTo: mainStackView.widthAnchor),
-
-            labelsStackView.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor),
-            labelsStackView.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor)
+            imageView.widthAnchor.constraint(equalTo: mainStackView.widthAnchor)
         ])
     }
 }
