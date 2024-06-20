@@ -12,7 +12,6 @@ class OnboardingViewController: UIViewController {
     private(set) lazy var imageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "baby-icon"))
         imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
 
@@ -21,7 +20,6 @@ class OnboardingViewController: UIViewController {
         label.text = "Hi there!"
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
@@ -32,13 +30,11 @@ class OnboardingViewController: UIViewController {
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
         label.textColor = .darkGray
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     private lazy var labelsStackView: UIStackView = {
         let sv = UIStackView(arrangedSubviews: [titleLabel, subTitleLabel])
-        sv.translatesAutoresizingMaskIntoConstraints = false
         sv.axis = .vertical
         sv.alignment = .center
         sv.spacing = 10
@@ -47,7 +43,6 @@ class OnboardingViewController: UIViewController {
 
     private lazy var mainStackView: UIStackView = {
         let sv = UIStackView(arrangedSubviews: [imageView, labelsStackView])
-        sv.translatesAutoresizingMaskIntoConstraints = false
         sv.axis = .vertical
         sv.alignment = .center
         sv.spacing = 20
