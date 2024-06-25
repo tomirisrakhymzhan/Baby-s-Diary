@@ -6,23 +6,17 @@
 //
 
 import UIKit
-import Combine
 
 class OnboardingPageView: UIView {
 
-   
-    
-    private var subscriptions = Set<AnyCancellable>()
-    
     private lazy var imageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "welcome"))
+        let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Hey there!"
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
         return label
@@ -30,7 +24,6 @@ class OnboardingPageView: UIView {
 
     private lazy var subTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         label.numberOfLines = 0
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
@@ -53,8 +46,7 @@ class OnboardingPageView: UIView {
         sv.spacing = 30
         return sv
     }()
-        
-       
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -64,7 +56,7 @@ class OnboardingPageView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(){
+    func setup() {
         setupViews()
         setupConstraints()
     }
@@ -86,35 +78,24 @@ class OnboardingPageView: UIView {
             NSLayoutConstraint(item: mainStackView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0),
             mainStackView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: 20),
             mainStackView.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -20),
-            
             imageView.heightAnchor.constraint(equalToConstant: 200),
             imageView.widthAnchor.constraint(equalTo: mainStackView.widthAnchor),
-            
         ])
     }
     
     func bind(to viewModel: OnboardingPageViewModel) {
-        viewModel.$title
-            .sink { [weak self] title in
-                self?.titleLabel.text = title
-            }
-            .store(in: &subscriptions)
-        
-        viewModel.$description
-            .sink { [weak self] subtitle in
-                self?.subTitleLabel.text = subtitle
-            }
-            .store(in: &subscriptions)
-        
-        viewModel.$imageName
-            .sink { [weak self] imageName in
-                self?.imageView.image = UIImage(named: imageName)
-            }
-            .store(in: &subscriptions)
+        titleLabel.text = viewModel.title
+        subTitleLabel.text = viewModel.description
+        imageView.image = UIImage(named: viewModel.imageName)
+
+        viewModel.titleChanged = { [weak self] title in
+            self?.titleLabel.text = title
+        }
+        viewModel.descriptionChanged = { [weak self] description in
+            self?.subTitleLabel.text = description
+        }
+        viewModel.imageNameChanged = { [weak self] imageName in
+            self?.imageView.image = UIImage(named: imageName)
+        }
     }
-    
-    deinit {
-        subscriptions.forEach{$0.cancel()}
-    }
-    
 }

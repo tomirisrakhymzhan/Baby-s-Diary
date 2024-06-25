@@ -6,28 +6,32 @@
 //
 
 import Foundation
-import Combine
 
-class OnboardingPageViewModel: ObservableObject {
-    // Published properties to notify observers when they change
-    @Published var title: String
-    @Published var description: String
-    @Published var imageName: String
-    
-    private var cancellables = Set<AnyCancellable>()
-    
-    // Initializer to set initial data
+class OnboardingPageViewModel {
+    var title: String {
+        didSet { titleChanged?(title) }
+    }
+    var description: String {
+        didSet { descriptionChanged?(description) }
+    }
+    var imageName: String {
+        didSet { imageNameChanged?(imageName) }
+    }
+
+    var titleChanged: ((String) -> Void)?
+    var descriptionChanged: ((String) -> Void)?
+    var imageNameChanged: ((String) -> Void)?
+
     init(model: OnboardingPageModel) {
         self.title = model.title
         self.description = model.description
         self.imageName = model.imageName
     }
-    
-    // Method to update the model (useful if the model can change)
+
     func updateModel(with model: OnboardingPageModel) {
         self.title = model.title
         self.description = model.description
         self.imageName = model.imageName
     }
-
 }
+

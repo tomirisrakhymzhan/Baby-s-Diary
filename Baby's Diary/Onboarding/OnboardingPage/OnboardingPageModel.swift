@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct OnboardingPageModel {
+struct OnboardingPageModel : Codable {
     let title: String
     let description: String
     let imageName: String

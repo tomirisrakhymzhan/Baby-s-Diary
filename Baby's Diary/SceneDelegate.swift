@@ -18,8 +18,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        let model = OnboardingPageModel(title: "Test test", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", imageName: "welcome")
-        let navigation = UINavigationController(rootViewController: OnboardingPageViewController(viewModel: OnboardingPageViewModel(model: model)))
+        
+        let jsonData = onboardingJsonString.data(using: .utf8)!
+        let decoder = JSONDecoder()
+        let pageModels = try! decoder.decode([OnboardingPageModel].self, from: jsonData)
+        
+        let onboardingModel = OnboardingModel(pages: pageModels)
+        let viewModel = OnboardingViewModel(model: onboardingModel)
+        let onboardingViewController = OnboardingViewController(viewModel: viewModel)
+        
+        let navigation = UINavigationController(rootViewController: onboardingViewController)
         window.rootViewController = navigation
         self.window = window
         window.makeKeyAndVisible()

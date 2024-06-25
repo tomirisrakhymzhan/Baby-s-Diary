@@ -18,6 +18,8 @@
 		BF69D1612C2777570005B63B /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69D1602C2777560005B63B /* OnboardingData.swift */; };
 		BF69D1642C28977D0005B63B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69D1632C28977D0005B63B /* OnboardingViewController.swift */; };
 		BF69D1662C28982E0005B63B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69D1652C28982E0005B63B /* OnboardingView.swift */; };
+		BF69D1682C29EBA90005B63B /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69D1672C29EBA90005B63B /* OnboardingModel.swift */; };
+		BF69D16A2C29EBCC0005B63B /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69D1692C29EBCC0005B63B /* OnboardingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		BF69D1602C2777560005B63B /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
 		BF69D1632C28977D0005B63B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		BF69D1652C28982E0005B63B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		BF69D1672C29EBA90005B63B /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
+		BF69D1692C29EBCC0005B63B /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 			children = (
 				BF69D1632C28977D0005B63B /* OnboardingViewController.swift */,
 				BF69D1652C28982E0005B63B /* OnboardingView.swift */,
+				BF69D1672C29EBA90005B63B /* OnboardingModel.swift */,
+				BF69D1692C29EBCC0005B63B /* OnboardingViewModel.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -190,7 +196,9 @@
 				BF69D1662C28982E0005B63B /* OnboardingView.swift in Sources */,
 				BF69D1642C28977D0005B63B /* OnboardingViewController.swift in Sources */,
 				BF69D1222C21872A0005B63B /* AppDelegate.swift in Sources */,
+				BF69D1682C29EBA90005B63B /* OnboardingModel.swift in Sources */,
 				BF69D1242C21872A0005B63B /* SceneDelegate.swift in Sources */,
+				BF69D16A2C29EBCC0005B63B /* OnboardingViewModel.swift in Sources */,
 				BF69D1592C2772B90005B63B /* OnboardingPageViewController.swift in Sources */,
 				BF69D1612C2777570005B63B /* OnboardingData.swift in Sources */,
 			);
