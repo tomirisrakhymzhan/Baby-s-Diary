@@ -9,7 +9,7 @@ import UIKit
 
 class OnboardingPageViewController: UIViewController {
 
-    private let onboardingView = OnboardingPageView()
+    private var onboardingView : OnboardingPageView!
     private let viewModel: OnboardingPageViewModel
     
     init(viewModel: OnboardingPageViewModel) {
@@ -18,16 +18,13 @@ class OnboardingPageViewController: UIViewController {
     }
     
     override func loadView() {
+        onboardingView = OnboardingPageView()
         self.view = onboardingView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindView()
-    }
-    
-    private func bindView() {
-        onboardingView.bind(to: viewModel)
+        onboardingView.configure(with: viewModel)
     }
 
     required init?(coder: NSCoder) {

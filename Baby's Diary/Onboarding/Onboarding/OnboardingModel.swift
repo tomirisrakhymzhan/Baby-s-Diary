@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct OnboardingModel {
+struct OnboardingModel : Codable{
     let pages: [OnboardingPageModel]
 }

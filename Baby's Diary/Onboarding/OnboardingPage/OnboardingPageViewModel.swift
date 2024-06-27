@@ -7,31 +7,26 @@
 
 import Foundation
 
-class OnboardingPageViewModel {
-    var title: String {
-        didSet { titleChanged?(title) }
-    }
-    var description: String {
-        didSet { descriptionChanged?(description) }
-    }
-    var imageName: String {
-        didSet { imageNameChanged?(imageName) }
-    }
-
-    var titleChanged: ((String) -> Void)?
-    var descriptionChanged: ((String) -> Void)?
-    var imageNameChanged: ((String) -> Void)?
-
+class OnboardingPageViewModel: OnboardingPageViewData {
+    var title: String
+    var description: String
+    var imageName: String
+    
     init(model: OnboardingPageModel) {
         self.title = model.title
         self.description = model.description
         self.imageName = model.imageName
     }
-
-    func updateModel(with model: OnboardingPageModel) {
-        self.title = model.title
-        self.description = model.description
-        self.imageName = model.imageName
+    
+    var titleText: String {
+        return title
+    }
+    
+    var descriptionText: String {
+        return description
+    }
+    
+    var image: String {
+        return imageName
     }
 }
-

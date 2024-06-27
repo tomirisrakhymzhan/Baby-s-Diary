@@ -8,29 +8,41 @@
 import Foundation
 
 class OnboardingViewModel {
-    private(set) var pageViewModels: [OnboardingPageViewModel]
+    private(set) var pageViewModels: [OnboardingPageViewModel] = []
     var currentPageIndex: Int = 0
-
-    init(model: OnboardingModel) {
-        self.pageViewModels = model.pages.map { OnboardingPageViewModel(model: $0) }
-    }
-
-    func viewModel(at index: Int) -> OnboardingPageViewModel? {
-        guard index >= 0 && index < pageViewModels.count else {
-            return nil
-        }
-        return pageViewModels[index]
+    
+    var numberOfPages: Int {
+        return pageViewModels.count
     }
     
     var isLastPage: Bool {
-        return currentPageIndex == pageViewModels.count - 1
+        return currentPageIndex == numberOfPages - 1
     }
     
     func goToNextPage() -> Int? {
-        if currentPageIndex < pageViewModels.count - 1 {
-            currentPageIndex += 1
-            return currentPageIndex
+        guard currentPageIndex < numberOfPages - 1 else {
+            return nil
         }
-        return nil
+        currentPageIndex += 1
+        return currentPageIndex
+    }
+    
+    func fetchOnboardingData(completion: @escaping (Error?) -> Void) {
+        DispatchQueue.global().async {
+            do {
+                let jsonData = onboardingJsonString.data(using: .utf8)!
+                let decoder = JSONDecoder()
+                let pageModels = try decoder.decode([OnboardingPageModel].self, from: jsonData)
+                let onboardingModel = OnboardingModel(pages: pageModels)
+                self.pageViewModels = onboardingModel.pages.map { OnboardingPageViewModel(model: $0) }
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+            }
+        }
     }
 }

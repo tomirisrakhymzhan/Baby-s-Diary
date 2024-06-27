@@ -13,24 +13,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
-        let jsonData = onboardingJsonString.data(using: .utf8)!
-        let decoder = JSONDecoder()
-        let pageModels = try! decoder.decode([OnboardingPageModel].self, from: jsonData)
-        
-        let onboardingModel = OnboardingModel(pages: pageModels)
-        let viewModel = OnboardingViewModel(model: onboardingModel)
-        let onboardingViewController = OnboardingViewController(viewModel: viewModel)
-        
-        let navigation = UINavigationController(rootViewController: onboardingViewController)
-        window.rootViewController = navigation
-        self.window = window
-        window.makeKeyAndVisible()
+        let viewModel = OnboardingViewModel()
+        viewModel.fetchOnboardingData { error in
+            if let error = error {
+                print("Error fetching onboarding data: \(error)")
+            } else {
+                let onboardingViewController = OnboardingViewController(viewModel: viewModel)
+                let navigation = UINavigationController(rootViewController: onboardingViewController)
+                window.rootViewController = navigation
+                self.window = window
+                window.makeKeyAndVisible()
+            }
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

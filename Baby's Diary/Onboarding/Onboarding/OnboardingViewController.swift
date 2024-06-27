@@ -9,10 +9,9 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
     
-    private let onboardingView = OnboardingView()
+    private var onboardingView: OnboardingView!
     private let viewModel: OnboardingViewModel
-    
-    private var pageViewControllers: [OnboardingPageViewController] = []
+    private var pageViewControllers: [UIViewController] = []
     
     init(viewModel: OnboardingViewModel) {
         self.viewModel = viewModel
@@ -24,7 +23,9 @@ class OnboardingViewController: UIViewController {
     }
     
     override func loadView() {
-        view = onboardingView
+        onboardingView = OnboardingView()
+        onboardingView.delegate = self
+        self.view = onboardingView
     }
     
     override func viewDidLoad() {
@@ -32,11 +33,11 @@ class OnboardingViewController: UIViewController {
         setup()
     }
     
-    private func setup(){
-        onboardingView.delegate = self
+    private func setup() {
         setupNavigationBar()
-        setupPageViewController()
-        onboardingView.pageControl.numberOfPages = viewModel.pageViewModels.count
+        setupPageViewControllers()
+        onboardingView.pageControl.numberOfPages = viewModel.numberOfPages
+        updateNextButtonTitle()
     }
     
     private func setupNavigationBar() {
@@ -45,14 +46,10 @@ class OnboardingViewController: UIViewController {
         navigationItem.rightBarButtonItem = skipButton
     }
     
-    private func setupPageViewController() {
-        guard !viewModel.pageViewModels.isEmpty else {
-            return
-        }
-        
-        for viewModel in viewModel.pageViewModels {
+    private func setupPageViewControllers() {
+        pageViewControllers = viewModel.pageViewModels.map { viewModel in
             let pageVC = OnboardingPageViewController(viewModel: viewModel)
-            pageViewControllers.append(pageVC)
+            return pageVC
         }
         
         if let firstViewController = pageViewControllers.first {
@@ -60,10 +57,13 @@ class OnboardingViewController: UIViewController {
             onboardingView.setCurrentPage(0)
         }
         
-        if viewModel.pageViewModels.count > 1 {
-            onboardingView.pageViewController.dataSource = self
-            onboardingView.pageViewController.delegate = self
-        }
+        onboardingView.pageViewController.dataSource = self
+        onboardingView.pageViewController.delegate = self
+    }
+    
+    private func updateNextButtonTitle() {
+        let isLastPage = viewModel.isLastPage
+        onboardingView.updateNextButtonTitle(isLastPage: isLastPage)
     }
     
     @objc private func skipButtonTapped() {
@@ -74,27 +74,45 @@ class OnboardingViewController: UIViewController {
 extension OnboardingViewController: OnboardingViewDelegate {
     func nextTapped() {
         if let nextIndex = viewModel.goToNextPage() {
-            let nextViewController = pageViewControllers[nextIndex]
-            onboardingView.setViewController(nextViewController)
+            onboardingView.setViewController(pageViewControllers[nextIndex])
             onboardingView.setCurrentPage(nextIndex)
+            updateNextButtonTitle()
         } else {
-            print("Reached the last page")
+            print("Finish button tapped")
         }
+    }
+    
+    func pageControlTapped(at index: Int) {
+        let currentPage = viewModel.currentPageIndex
+        let direction: UIPageViewController.NavigationDirection = index > currentPage ? .forward : .reverse
+        
+        viewModel.currentPageIndex = index
+        
+        let step = direction == .forward ? 1 : -1
+        var nextIndex = currentPage + step
+        
+        while nextIndex != index {
+            onboardingView.pageViewController.setViewControllers([pageViewControllers[nextIndex]], direction: direction, animated: true, completion: { _ in })
+            nextIndex += step
+        }
+        
+        onboardingView.pageViewController.setViewControllers([pageViewControllers[index]], direction: direction, animated: true, completion: { [weak self] _ in
+            self?.onboardingView.setCurrentPage(index)
+            self?.updateNextButtonTitle()
+        })
     }
 }
 
 extension OnboardingViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let currentIndex = pageViewControllers.firstIndex(of: viewController as! OnboardingPageViewController),
-              currentIndex > 0 else {
+        guard let currentIndex = pageViewControllers.firstIndex(of: viewController), currentIndex > 0 else {
             return nil
         }
         return pageViewControllers[currentIndex - 1]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let currentIndex = pageViewControllers.firstIndex(of: viewController as! OnboardingPageViewController),
-              currentIndex < pageViewControllers.count - 1 else {
+        guard let currentIndex = pageViewControllers.firstIndex(of: viewController), currentIndex < pageViewControllers.count - 1 else {
             return nil
         }
         return pageViewControllers[currentIndex + 1]
@@ -103,12 +121,11 @@ extension OnboardingViewController: UIPageViewControllerDataSource {
 
 extension OnboardingViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        guard completed,
-              let visibleViewController = pageViewController.viewControllers?.first as? OnboardingPageViewController,
-              let index = pageViewControllers.firstIndex(of: visibleViewController) else {
+        guard completed, let visibleViewController = pageViewController.viewControllers?.first, let index = pageViewControllers.firstIndex(of: visibleViewController) else {
             return
         }
         viewModel.currentPageIndex = index
         onboardingView.setCurrentPage(index)
+        updateNextButtonTitle()
     }
 }

@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol OnboardingPageViewData {
+    var titleText: String { get }
+    var descriptionText: String { get }
+    var image: String { get }
+}
+
 class OnboardingPageView: UIView {
 
     private lazy var imageView: UIImageView = {
@@ -83,19 +89,10 @@ class OnboardingPageView: UIView {
         ])
     }
     
-    func bind(to viewModel: OnboardingPageViewModel) {
-        titleLabel.text = viewModel.title
-        subTitleLabel.text = viewModel.description
-        imageView.image = UIImage(named: viewModel.imageName)
-
-        viewModel.titleChanged = { [weak self] title in
-            self?.titleLabel.text = title
-        }
-        viewModel.descriptionChanged = { [weak self] description in
-            self?.subTitleLabel.text = description
-        }
-        viewModel.imageNameChanged = { [weak self] imageName in
-            self?.imageView.image = UIImage(named: imageName)
-        }
+    func configure(with data: OnboardingPageViewData) {
+        titleLabel.text = data.titleText
+        subTitleLabel.text = data.descriptionText
+        imageView.image = UIImage(named: data.image)
     }
+    
 }

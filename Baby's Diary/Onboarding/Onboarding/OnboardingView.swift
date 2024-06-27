@@ -4,11 +4,11 @@
 //
 //  Created by Томирис Рахымжан on 23/06/2024.
 //
-
 import UIKit
 
 protocol OnboardingViewDelegate: AnyObject {
     func nextTapped()
+    func pageControlTapped(at index: Int)
 }
 
 class OnboardingView: UIView {
@@ -24,6 +24,7 @@ class OnboardingView: UIView {
         let pc = UIPageControl()
         pc.pageIndicatorTintColor = .lightGray
         pc.currentPageIndicatorTintColor = .black
+        pc.addTarget(self, action: #selector(pageControlValueChanged(_:)), for: .valueChanged)
         return pc
     }()
     
@@ -35,11 +36,12 @@ class OnboardingView: UIView {
         button.setTitleColor(.white, for: .normal)
         button.configuration?.titlePadding = CGFloat(15)
         var config = UIButton.Configuration.filled()
-        config.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20)
+        config.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 50, bottom: 10, trailing: 50)
         button.configuration = config
         button.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         return button
     }()
+
     
     private lazy var stackView: UIStackView = {
         let sv = UIStackView(arrangedSubviews: [pageControl, nextButton])
@@ -61,28 +63,23 @@ class OnboardingView: UIView {
     
     private func setupUI() {
         backgroundColor = .white
-        
         addSubview(pageViewController.view)
         addSubview(stackView)
     }
     
     private func setupConstraints() {
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        pageControl.translatesAutoresizingMaskIntoConstraints = false
-        nextButton.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            pageViewController.view.topAnchor.constraint(equalTo: topAnchor),
-            pageViewController.view.bottomAnchor.constraint(equalTo: bottomAnchor),
-            pageViewController.view.leadingAnchor.constraint(equalTo: leadingAnchor),
-            pageViewController.view.trailingAnchor.constraint(equalTo: trailingAnchor),
-            
-            stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            stackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            
-            
-        ])
+            pageViewController.view.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+                pageViewController.view.leadingAnchor.constraint(equalTo: leadingAnchor),
+                pageViewController.view.trailingAnchor.constraint(equalTo: trailingAnchor),
+                
+                stackView.topAnchor.constraint(equalTo: pageViewController.view.bottomAnchor, constant: 20),
+                stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+                stackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20)
+            ])
     }
     
     func setViewController(_ viewController: UIViewController) {
@@ -93,7 +90,16 @@ class OnboardingView: UIView {
         pageControl.currentPage = index
     }
     
+    func updateNextButtonTitle(isLastPage: Bool) {
+        let title = isLastPage ? "Finish" : "Next"
+        nextButton.setTitle(title, for: .normal)
+    }
+    
     @objc private func nextButtonTapped() {
         delegate?.nextTapped()
+    }
+    
+    @objc private func pageControlValueChanged(_ sender: UIPageControl) {
+        delegate?.pageControlTapped(at: sender.currentPage)
     }
 }
