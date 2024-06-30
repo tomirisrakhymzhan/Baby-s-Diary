@@ -10,14 +10,13 @@ import UIKit
 class OnboardingViewController: UIViewController {
     
     private var onboardingView: OnboardingView!
-    private let viewModel: OnboardingViewModel
+    private var viewModel: OnboardingViewModel
     private var pageViewControllers: [UIViewController] = []
     
-    init(viewModel: OnboardingViewModel) {
-        self.viewModel = viewModel
+    init(){
+        self.viewModel = OnboardingViewModel()
         super.init(nibName: nil, bundle: nil)
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -30,7 +29,15 @@ class OnboardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
+        // здесь загрузка данных
+        viewModel.fetchOnboardingData { error in
+            if let error = error {
+                print("Error fetching onboarding data: \(error)")
+            } else {
+                self.setup()
+            }
+            
+        }
     }
     
     private func setup() {

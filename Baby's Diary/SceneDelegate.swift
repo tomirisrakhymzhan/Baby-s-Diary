@@ -15,19 +15,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        
-        let viewModel = OnboardingViewModel()
-        viewModel.fetchOnboardingData { error in
-            if let error = error {
-                print("Error fetching onboarding data: \(error)")
-            } else {
-                let onboardingViewController = OnboardingViewController(viewModel: viewModel)
-                let navigation = UINavigationController(rootViewController: onboardingViewController)
-                window.rootViewController = navigation
-                self.window = window
-                window.makeKeyAndVisible()
-            }
-        }
+        let onboardingViewController = OnboardingViewController()
+        let navigation = UINavigationController(rootViewController: onboardingViewController)
+        window.rootViewController = navigation
+        self.window = window
+        window.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
