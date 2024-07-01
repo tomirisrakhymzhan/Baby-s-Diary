@@ -167,6 +167,7 @@
 				en,
 				Base,
 				kk,
+				ru,
 			);
 			mainGroup = BF69D1152C21872A0005B63B;
 			productRefGroup = BF69D11F2C21872A0005B63B /* Products */;

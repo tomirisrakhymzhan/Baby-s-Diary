@@ -31,3 +31,11 @@ public let onboardingJsonString = """
     }
 ]
 """
+
+let onboardingData : [OnboardingPageModel] = [
+    OnboardingPageModel(title: NSLocalizedString("Onboarding_Welcome_Title", comment: "welcome"), description: NSLocalizedString("Onboarding_Welcome_Subtitle", comment: "welcome"), imageName: "welcome"),
+    OnboardingPageModel(title: NSLocalizedString("Onboarding_Sleep_Title", comment: "welcome"), description: NSLocalizedString("Onboarding_Sleep_Subtitle", comment: "sleeping"), imageName: "sleeping_baby"),
+    OnboardingPageModel(title: NSLocalizedString("Onboarding_Statistics_Title", comment: "welcome"), description: NSLocalizedString("Onboarding_Statistics_Subtitle", comment: "statistics"), imageName: "statistics"),
+    OnboardingPageModel(title: NSLocalizedString("Onboarding_Consultation_Title", comment: "welcome"), description: NSLocalizedString("Onboarding_Consultation_Subtitle", comment: "consultation"), imageName: "artificial_intelligence"),
+    
+]

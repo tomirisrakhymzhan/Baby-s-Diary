@@ -91,7 +91,7 @@ class OnboardingView: UIView {
     }
     
     func updateNextButtonTitle(isLastPage: Bool) {
-        let title = isLastPage ? "Finish" : "Next"
+        let title = isLastPage ? NSLocalizedString("Onboarding_Finish_Button", comment: "finish") : NSLocalizedString("Onboarding_Next_Button", comment: "next")
         nextButton.setTitle(title, for: .normal)
     }
     

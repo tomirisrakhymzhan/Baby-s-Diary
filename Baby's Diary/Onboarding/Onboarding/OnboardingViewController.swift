@@ -30,14 +30,16 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // здесь загрузка данных
-        viewModel.fetchOnboardingData { error in
-            if let error = error {
-                print("Error fetching onboarding data: \(error)")
-            } else {
-                self.setup()
-            }
-            
-        }
+        viewModel.fetchLocalizedOnboardingData()
+        setup()
+//        viewModel.fetchOnboardingData { error in
+//            if let error = error {
+//                print("Error fetching onboarding data: \(error)")
+//            } else {
+//                self.setup()
+//            }
+//            
+//        }
     }
     
     private func setup() {
@@ -48,7 +50,7 @@ class OnboardingViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        let skipButton = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(skipButtonTapped))
+        let skipButton = UIBarButtonItem(title: NSLocalizedString("Onboarding_Skip_Button", comment: "finish") , style: .plain, target: self, action: #selector(skipButtonTapped))
         skipButton.tintColor = .systemBlue
         navigationItem.rightBarButtonItem = skipButton
     }

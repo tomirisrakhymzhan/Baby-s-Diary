@@ -27,6 +27,10 @@ class OnboardingViewModel {
         return currentPageIndex
     }
     
+    func fetchLocalizedOnboardingData(){
+        self.pageViewModels = OnboardingModel(pages: onboardingData).pages.map { OnboardingPageViewModel(model: $0) }
+    }
+    
     func fetchOnboardingData(completion: @escaping (Error?) -> Void) {
         DispatchQueue.global().async {
             do {
