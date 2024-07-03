@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import Combine
 
 class OnboardingViewController: UIViewController {
     
     private var onboardingView: OnboardingView!
-    private var viewModel: OnboardingViewModel
+    private let viewModel: OnboardingViewModel
     private var pageViewControllers: [UIViewController] = []
+    
+    private var subscriptions = Set<AnyCancellable>()
     
     init(){
         self.viewModel = OnboardingViewModel()
@@ -30,16 +33,8 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // здесь загрузка данных
-        viewModel.fetchLocalizedOnboardingData()
-        setup()
-//        viewModel.fetchOnboardingData { error in
-//            if let error = error {
-//                print("Error fetching onboarding data: \(error)")
-//            } else {
-//                self.setup()
-//            }
-//            
-//        }
+        viewModel.loadOnboardingData()
+        setupBindings()
     }
     
     private func setup() {
@@ -70,6 +65,15 @@ class OnboardingViewController: UIViewController {
         onboardingView.pageViewController.delegate = self
     }
     
+    func setupBindings(){
+        viewModel.$pageViewModels
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] data in
+                self?.setup()
+            }
+            .store(in: &subscriptions)
+    }
+    
     private func updateNextButtonTitle() {
         let isLastPage = viewModel.isLastPage
         onboardingView.updateNextButtonTitle(isLastPage: isLastPage)
@@ -77,6 +81,11 @@ class OnboardingViewController: UIViewController {
     
     @objc private func skipButtonTapped() {
         print("Skip button tapped")
+    }
+    
+    deinit {
+        subscriptions.forEach{$0.cancel()}
+        print("OnboardingViewController deallocated")
     }
 }
 

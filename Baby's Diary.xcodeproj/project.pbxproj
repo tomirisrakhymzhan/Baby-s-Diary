@@ -21,6 +21,9 @@
 		BF69D1682C29EBA90005B63B /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69D1672C29EBA90005B63B /* OnboardingModel.swift */; };
 		BF69D16A2C29EBCC0005B63B /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69D1692C29EBCC0005B63B /* OnboardingViewModel.swift */; };
 		BF69D16C2C2EFE3D0005B63B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BF69D16B2C2EFE3D0005B63B /* Localizable.xcstrings */; };
+		BFFD1B6A2C3302EF0052699E /* OnboardingData_en.json in Resources */ = {isa = PBXBuildFile; fileRef = BFFD1B692C3302EF0052699E /* OnboardingData_en.json */; };
+		BFFD1B6C2C33035F0052699E /* OnboardingData_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = BFFD1B6B2C33035F0052699E /* OnboardingData_ru.json */; };
+		BFFD1B6E2C3303780052699E /* OnboardingData_kk.json in Resources */ = {isa = PBXBuildFile; fileRef = BFFD1B6D2C3303780052699E /* OnboardingData_kk.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,9 @@
 		BF69D1692C29EBCC0005B63B /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		BF69D16B2C2EFE3D0005B63B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		BF69D16D2C2EFE750005B63B /* kk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = kk; path = kk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		BFFD1B692C3302EF0052699E /* OnboardingData_en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OnboardingData_en.json; sourceTree = "<group>"; };
+		BFFD1B6B2C33035F0052699E /* OnboardingData_ru.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OnboardingData_ru.json; sourceTree = "<group>"; };
+		BFFD1B6D2C3303780052699E /* OnboardingData_kk.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OnboardingData_kk.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,9 @@
 				BF69D12A2C21872D0005B63B /* Assets.xcassets */,
 				BF69D1602C2777560005B63B /* OnboardingData.swift */,
 				BF69D16B2C2EFE3D0005B63B /* Localizable.xcstrings */,
+				BFFD1B692C3302EF0052699E /* OnboardingData_en.json */,
+				BFFD1B6B2C33035F0052699E /* OnboardingData_ru.json */,
+				BFFD1B6D2C3303780052699E /* OnboardingData_kk.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -184,7 +193,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFFD1B6C2C33035F0052699E /* OnboardingData_ru.json in Resources */,
 				BF69D12B2C21872D0005B63B /* Assets.xcassets in Resources */,
+				BFFD1B6E2C3303780052699E /* OnboardingData_kk.json in Resources */,
+				BFFD1B6A2C3302EF0052699E /* OnboardingData_en.json in Resources */,
 				BF69D12E2C21872D0005B63B /* Base in Resources */,
 				BF69D16C2C2EFE3D0005B63B /* Localizable.xcstrings in Resources */,
 			);
