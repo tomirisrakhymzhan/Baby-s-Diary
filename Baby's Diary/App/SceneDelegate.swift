@@ -15,9 +15,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        let onboardingViewController = OnboardingViewController()
-        let navigation = UINavigationController(rootViewController: onboardingViewController)
-        window.rootViewController = navigation
+        
+        //удалить все из юзердефолтс
+        let defaults = UserDefaults.standard
+        if let bundleIdentifier = Bundle.main.bundleIdentifier {
+            defaults.removePersistentDomain(forName: bundleIdentifier)
+        }
+
+        
+        let checkSeenOnboarding : Bool = UserDefaults.standard.bool(forKey: OnboardingViewController.KEY)
+        if checkSeenOnboarding {
+            let mainVC = TabBarViewController()
+            let navVC = UINavigationController(rootViewController: mainVC)
+            window.rootViewController = navVC
+        }else {
+            let onboardingViewController = OnboardingViewController()
+            let navVC = UINavigationController(rootViewController: onboardingViewController)
+            window.rootViewController = navVC
+        }
+        
         self.window = window
         window.makeKeyAndVisible()
     }

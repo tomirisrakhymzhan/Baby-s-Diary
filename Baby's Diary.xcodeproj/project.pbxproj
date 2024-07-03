@@ -21,6 +21,11 @@
 		BF69D1682C29EBA90005B63B /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69D1672C29EBA90005B63B /* OnboardingModel.swift */; };
 		BF69D16A2C29EBCC0005B63B /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69D1692C29EBCC0005B63B /* OnboardingViewModel.swift */; };
 		BF69D16C2C2EFE3D0005B63B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BF69D16B2C2EFE3D0005B63B /* Localizable.xcstrings */; };
+		BF9B46282C358F2200537669 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B46272C358F2200537669 /* TabBarViewController.swift */; };
+		BF9B462E2C35949300537669 /* SleepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B462D2C35949300537669 /* SleepView.swift */; };
+		BF9B46302C35957900537669 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B462F2C35957900537669 /* StatisticsView.swift */; };
+		BF9B46322C3595B100537669 /* SleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B46312C3595B100537669 /* SleepViewController.swift */; };
+		BF9B46342C35963800537669 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B46332C35963800537669 /* StatisticsViewController.swift */; };
 		BFFD1B6A2C3302EF0052699E /* OnboardingData_en.json in Resources */ = {isa = PBXBuildFile; fileRef = BFFD1B692C3302EF0052699E /* OnboardingData_en.json */; };
 		BFFD1B6C2C33035F0052699E /* OnboardingData_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = BFFD1B6B2C33035F0052699E /* OnboardingData_ru.json */; };
 		BFFD1B6E2C3303780052699E /* OnboardingData_kk.json in Resources */ = {isa = PBXBuildFile; fileRef = BFFD1B6D2C3303780052699E /* OnboardingData_kk.json */; };
@@ -44,6 +49,11 @@
 		BF69D1692C29EBCC0005B63B /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		BF69D16B2C2EFE3D0005B63B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		BF69D16D2C2EFE750005B63B /* kk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = kk; path = kk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		BF9B46272C358F2200537669 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		BF9B462D2C35949300537669 /* SleepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepView.swift; sourceTree = "<group>"; };
+		BF9B462F2C35957900537669 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		BF9B46312C3595B100537669 /* SleepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepViewController.swift; sourceTree = "<group>"; };
+		BF9B46332C35963800537669 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		BFFD1B692C3302EF0052699E /* OnboardingData_en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OnboardingData_en.json; sourceTree = "<group>"; };
 		BFFD1B6B2C33035F0052699E /* OnboardingData_ru.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OnboardingData_ru.json; sourceTree = "<group>"; };
 		BFFD1B6D2C3303780052699E /* OnboardingData_kk.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OnboardingData_kk.json; sourceTree = "<group>"; };
@@ -79,12 +89,12 @@
 		BF69D1202C21872A0005B63B /* Baby's Diary */ = {
 			isa = PBXGroup;
 			children = (
+				BF9B46352C35AE5D00537669 /* App */,
+				BF9B462C2C35947200537669 /* Statistics */,
+				BF9B462B2C35946B00537669 /* Sleep */,
+				BF9B46222C358D8B00537669 /* TabBar */,
 				BF69D15F2C2777130005B63B /* Resources */,
 				BF69D1552C276D420005B63B /* Onboarding */,
-				BF69D1212C21872A0005B63B /* AppDelegate.swift */,
-				BF69D1232C21872A0005B63B /* SceneDelegate.swift */,
-				BF69D12C2C21872D0005B63B /* LaunchScreen.storyboard */,
-				BF69D12F2C21872D0005B63B /* Info.plist */,
 			);
 			path = "Baby's Diary";
 			sourceTree = "<group>";
@@ -112,6 +122,8 @@
 		BF69D15F2C2777130005B63B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF69D12F2C21872D0005B63B /* Info.plist */,
+				BF69D12C2C21872D0005B63B /* LaunchScreen.storyboard */,
 				BF69D12A2C21872D0005B63B /* Assets.xcassets */,
 				BF69D1602C2777560005B63B /* OnboardingData.swift */,
 				BF69D16B2C2EFE3D0005B63B /* Localizable.xcstrings */,
@@ -131,6 +143,41 @@
 				BF69D1692C29EBCC0005B63B /* OnboardingViewModel.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		BF9B46222C358D8B00537669 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				BF9B46272C358F2200537669 /* TabBarViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		BF9B462B2C35946B00537669 /* Sleep */ = {
+			isa = PBXGroup;
+			children = (
+				BF9B462D2C35949300537669 /* SleepView.swift */,
+				BF9B46312C3595B100537669 /* SleepViewController.swift */,
+			);
+			path = Sleep;
+			sourceTree = "<group>";
+		};
+		BF9B462C2C35947200537669 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				BF9B462F2C35957900537669 /* StatisticsView.swift */,
+				BF9B46332C35963800537669 /* StatisticsViewController.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		BF9B46352C35AE5D00537669 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BF69D1232C21872A0005B63B /* SceneDelegate.swift */,
+				BF69D1212C21872A0005B63B /* AppDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,14 +257,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF69D1572C276D9B0005B63B /* OnboardingPageView.swift in Sources */,
+				BF9B46302C35957900537669 /* StatisticsView.swift in Sources */,
 				BF69D15E2C27750F0005B63B /* OnboardingPageViewModel.swift in Sources */,
 				BF69D15C2C2774E80005B63B /* OnboardingPageModel.swift in Sources */,
 				BF69D1662C28982E0005B63B /* OnboardingView.swift in Sources */,
+				BF9B46282C358F2200537669 /* TabBarViewController.swift in Sources */,
 				BF69D1642C28977D0005B63B /* OnboardingViewController.swift in Sources */,
+				BF9B46342C35963800537669 /* StatisticsViewController.swift in Sources */,
 				BF69D1222C21872A0005B63B /* AppDelegate.swift in Sources */,
 				BF69D1682C29EBA90005B63B /* OnboardingModel.swift in Sources */,
+				BF9B462E2C35949300537669 /* SleepView.swift in Sources */,
 				BF69D1242C21872A0005B63B /* SceneDelegate.swift in Sources */,
 				BF69D16A2C29EBCC0005B63B /* OnboardingViewModel.swift in Sources */,
+				BF9B46322C3595B100537669 /* SleepViewController.swift in Sources */,
 				BF69D1592C2772B90005B63B /* OnboardingPageViewController.swift in Sources */,
 				BF69D1612C2777570005B63B /* OnboardingData.swift in Sources */,
 			);
@@ -367,7 +419,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Baby's Diary/Info.plist";
+				INFOPLIST_FILE = "Baby's Diary/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -393,7 +445,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Baby's Diary/Info.plist";
+				INFOPLIST_FILE = "Baby's Diary/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

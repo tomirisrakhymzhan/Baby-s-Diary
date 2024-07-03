@@ -10,6 +10,8 @@ import Combine
 
 class OnboardingViewController: UIViewController {
     
+    static let KEY = "UserDidSeeOnboarding"
+
     private var onboardingView: OnboardingView!
     private let viewModel: OnboardingViewModel
     private var pageViewControllers: [UIViewController] = []
@@ -79,8 +81,17 @@ class OnboardingViewController: UIViewController {
         onboardingView.updateNextButtonTitle(isLastPage: isLastPage)
     }
     
+    func start() {
+        UserDefaults.standard.setValue(true, forKey: OnboardingViewController.KEY)
+        let tabBarVC = TabBarViewController()
+        let navVC = UINavigationController(rootViewController: tabBarVC)
+        view.window?.rootViewController = navVC
+        view.window?.makeKeyAndVisible()
+    }
+    
     @objc private func skipButtonTapped() {
         print("Skip button tapped")
+        start()
     }
     
     deinit {
@@ -97,6 +108,7 @@ extension OnboardingViewController: OnboardingViewDelegate {
             updateNextButtonTitle()
         } else {
             print("Finish button tapped")
+            start()
         }
     }
     
