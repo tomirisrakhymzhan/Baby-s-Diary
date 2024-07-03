@@ -1,259 +1,351 @@
 {
-  "sourceLanguage": "en",
-  "version": "1.0",
-  "strings": {
-    "Onboarding_Consultation_Subtitle": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "With the AI consultation feature, you'll receive personalized recommendations based on your child's sleep statistics. Using OpenAI algorithms, the app analyzes the data and suggests solutions to improve sleep quality."
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Cancel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
           }
         },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "С функцией консультации ИИ вы получите персонализированные рекомендации на основе статистики сна вашего ребенка. Используя алгоритмы OpenAI, приложение анализирует данные и предлагает решения для улучшения качества сна."
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жою"
           }
         },
-        "kk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Жасанды интеллект кеңес беру функциясының көмегімен сіз балаңыздың ұйқы статистикасына негізделген жеке ұсыныстар аласыз. OpenAI алгоритмдерін қолдана отырып, қосымша деректерді талдап, ұйқы сапасын жақсарту үшін шешімдер ұсынады."
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отмена"
           }
         }
       }
     },
-    "Onboarding_Consultation_Title": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Consultation"
+    "Onboarding_Alert_Message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This step is irreversible"
           }
         },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Консультация"
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Бұл қадам қайтымсыз\n"
           }
         },
-        "kk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Кеңес беру"
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Этот шаг необратим\n"
           }
         }
       }
     },
-    "Onboarding_Finish_Button": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Finish"
+    "Onboarding_Alert_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to finish onboarding?"
           }
         },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Завершить"
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Онбординг аяқтағыңыз келетініне сенімдісіз бе?"
           }
         },
-        "kk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Аяқтау"
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вы уверены, что хотите завершить онбординг?\n"
           }
         }
       }
     },
-    "Onboarding_Next_Button": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Next"
+    "Onboarding_Consultation_Subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "With the AI consultation feature, you'll receive personalized recommendations based on your child's sleep statistics. Using OpenAI algorithms, the app analyzes the data and suggests solutions to improve sleep quality."
           }
         },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Далее"
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жасанды интеллект кеңес беру функциясының көмегімен сіз балаңыздың ұйқы статистикасына негізделген жеке ұсыныстар аласыз. OpenAI алгоритмдерін қолдана отырып, қосымша деректерді талдап, ұйқы сапасын жақсарту үшін шешімдер ұсынады."
           }
         },
-        "kk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Келесі"
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "С функцией консультации ИИ вы получите персонализированные рекомендации на основе статистики сна вашего ребенка. Используя алгоритмы OpenAI, приложение анализирует данные и предлагает решения для улучшения качества сна."
           }
         }
       }
     },
-    "Onboarding_Skip_Button": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Skip"
+    "Onboarding_Consultation_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consultation"
           }
         },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Пропустить"
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кеңес беру"
           }
         },
-        "kk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Өткізіп жіберу"
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Консультация"
           }
         }
       }
     },
-    "Onboarding_Sleep_Subtitle": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "With the sleep tracking feature, you can easily add and manage your child's sleep times by recording the start and end of each period. This helps you monitor sleep patterns, analyze data, and improve your child's sleep habits."
+    "Onboarding_Finish_Button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finish"
           }
         },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "С функцией отслеживания сна вы легко сможете добавлять и управлять временем сна вашего ребенка, записывая начало и окончание каждого периода. Это поможет следить за режимом и качеством сна, анализировать данные и улучшать привычки сна малыша."
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Аяқтау"
           }
         },
-        "kk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ұйқыны бақылау функциясының көмегімен әр кезеңнің басталуы мен аяқталуын жазу арқылы балаңыздың ұйқы уақытын оңай қосуға және басқаруға болады. Бұл ұйқы режимін қадағалауға, деректерді талдауға және балаңыздың ұйқы әдеттерін жақсартуға көмектеседі."
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Завершить"
           }
         }
       }
     },
-    "Onboarding_Sleep_Title": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sleep"
+    "Onboarding_Next_Button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
           }
         },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Сон"
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Келесі"
           }
         },
-        "kk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ұйқы"
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Далее"
           }
         }
       }
     },
-    "Onboarding_Statistics_Subtitle": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "With the sleep statistics feature, you can track and analyze your child's sleep patterns by recording data. Share these statistics with experts for professional recommendations."
+    "Onboarding_Skip_Button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skip"
           }
         },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "С функцией статистики сна вы сможете отслеживать и анализировать режимы сна ребенка, записывая данные. Делитесь этой статистикой с экспертами для профессиональных рекомендаций."
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Өткізіп жіберу"
           }
         },
-        "kk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ұйқы статистикасы функциясының көмегімен деректерді жазу арқылы балаңыздың ұйқы режимін қадағалап, талдай аласыз. Кәсіби ұсыныстар алу үшін осы статистиканы сарапшылармен бөлісіңіз."
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пропустить"
           }
         }
       }
     },
-    "Onboarding_Statistics_Title": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Statistics"
+    "Onboarding_Sleep_Subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "With the sleep tracking feature, you can easily add and manage your child's sleep times by recording the start and end of each period. This helps you monitor sleep patterns, analyze data, and improve your child's sleep habits."
           }
         },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Статистика"
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ұйқыны бақылау функциясының көмегімен әр кезеңнің басталуы мен аяқталуын жазу арқылы балаңыздың ұйқы уақытын оңай қосуға және басқаруға болады. Бұл ұйқы режимін қадағалауға, деректерді талдауға және балаңыздың ұйқы әдеттерін жақсартуға көмектеседі."
           }
         },
-        "kk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Статистика"
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "С функцией отслеживания сна вы легко сможете добавлять и управлять временем сна вашего ребенка, записывая начало и окончание каждого периода. Это поможет следить за режимом и качеством сна, анализировать данные и улучшать привычки сна малыша."
           }
         }
       }
     },
-    "Onboarding_Welcome_Title": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Welcome"
+    "Onboarding_Sleep_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sleep"
           }
         },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Добро пожаловать"
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ұйқы"
           }
         },
-        "kk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Қош келдіңіз"
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сон"
           }
         }
       }
     },
-    "Onboarding_Welcome_Subtitle": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Our app will help you improve your child's sleep quality!"
+    "Onboarding_Statistics_Subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "With the sleep statistics feature, you can track and analyze your child's sleep patterns by recording data. Share these statistics with experts for professional recommendations."
           }
         },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Наше приложение поможет вам улучшить качество сна вашего ребенка!"
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ұйқы статистикасы функциясының көмегімен деректерді жазу арқылы балаңыздың ұйқы режимін қадағалап, талдай аласыз. Кәсіби ұсыныстар алу үшін осы статистиканы сарапшылармен бөлісіңіз."
           }
         },
-        "kk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Біздің қосымша сізге балаңыздың ұйқы сапасын жақсартуға көмектеседі!"
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "С функцией статистики сна вы сможете отслеживать и анализировать режимы сна ребенка, записывая данные. Делитесь этой статистикой с экспертами для профессиональных рекомендаций."
+          }
+        }
+      }
+    },
+    "Onboarding_Statistics_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statistics"
+          }
+        },
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Статистика"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Статистика"
+          }
+        }
+      }
+    },
+    "Onboarding_Welcome_Subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Our app will help you improve your child's sleep quality!"
+          }
+        },
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Біздің қосымша сізге балаңыздың ұйқы сапасын жақсартуға көмектеседі!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Наше приложение поможет вам улучшить качество сна вашего ребенка!"
+          }
+        }
+      }
+    },
+    "Onboarding_Welcome_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome"
+          }
+        },
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Қош келдіңіз"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добро пожаловать"
+          }
+        }
+      }
+    },
+    "Yes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yes"
+          }
+        },
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Иә"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Да"
           }
         }
       }
     }
-  }
+  },
+  "version" : "1.0"
 }

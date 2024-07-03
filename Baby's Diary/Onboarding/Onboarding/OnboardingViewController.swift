@@ -81,6 +81,19 @@ class OnboardingViewController: UIViewController {
         onboardingView.updateNextButtonTitle(isLastPage: isLastPage)
     }
     
+    func showConfirmationAlert(){
+        let alertController = UIAlertController(title: String(localized: "Onboarding_Alert_Title"), message: String(localized: "Onboarding_Alert_Message"), preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: String(localized: "Cancel"), style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        let yesAction = UIAlertAction(title: String(localized: "Yes"), style: .default) { [weak self] _ in
+            self?.start()
+        }
+        alertController.addAction(yesAction)
+        self.present(alertController, animated: true)
+    }
+    
     func start() {
         UserDefaults.standard.setValue(true, forKey: OnboardingViewController.KEY)
         let tabBarVC = TabBarViewController()
@@ -91,7 +104,7 @@ class OnboardingViewController: UIViewController {
     
     @objc private func skipButtonTapped() {
         print("Skip button tapped")
-        start()
+        showConfirmationAlert()
     }
     
     deinit {
@@ -108,7 +121,7 @@ extension OnboardingViewController: OnboardingViewDelegate {
             updateNextButtonTitle()
         } else {
             print("Finish button tapped")
-            start()
+            showConfirmationAlert()
         }
     }
     
