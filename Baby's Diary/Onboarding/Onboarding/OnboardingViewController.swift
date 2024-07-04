@@ -10,12 +10,10 @@ import Combine
 
 class OnboardingViewController: UIViewController {
     
-    static let KEY = "UserDidSeeOnboarding"
-
-    private var onboardingView: OnboardingView!
+    weak var router: Router?
     private let viewModel: OnboardingViewModel
     private var pageViewControllers: [UIViewController] = []
-    
+    private var onboardingView: OnboardingView!
     private var subscriptions = Set<AnyCancellable>()
     
     init(){
@@ -81,30 +79,13 @@ class OnboardingViewController: UIViewController {
         onboardingView.updateNextButtonTitle(isLastPage: isLastPage)
     }
     
-    func showConfirmationAlert(){
-        let alertController = UIAlertController(title: String(localized: "Onboarding_Alert_Title"), message: String(localized: "Onboarding_Alert_Message"), preferredStyle: .alert)
-        
-        let cancelAction = UIAlertAction(title: String(localized: "Cancel"), style: .cancel, handler: nil)
-        alertController.addAction(cancelAction)
-        
-        let yesAction = UIAlertAction(title: String(localized: "Yes"), style: .default) { [weak self] _ in
-            self?.start()
-        }
-        alertController.addAction(yesAction)
-        self.present(alertController, animated: true)
-    }
-    
-    func start() {
-        UserDefaults.standard.setValue(true, forKey: OnboardingViewController.KEY)
-        let tabBarVC = TabBarViewController()
-        let navVC = UINavigationController(rootViewController: tabBarVC)
-        view.window?.rootViewController = navVC
-        view.window?.makeKeyAndVisible()
-    }
-    
     @objc private func skipButtonTapped() {
         print("Skip button tapped")
-        showConfirmationAlert()
+        if router == nil {
+            print("router is nil")
+        } else {
+            router?.showAlert()
+        }
     }
     
     deinit {
@@ -121,7 +102,11 @@ extension OnboardingViewController: OnboardingViewDelegate {
             updateNextButtonTitle()
         } else {
             print("Finish button tapped")
-            showConfirmationAlert()
+            if router == nil {
+                print("router is nil")
+            } else {
+                router?.showAlert()
+            }
         }
     }
     
@@ -172,3 +157,4 @@ extension OnboardingViewController: UIPageViewControllerDelegate {
         updateNextButtonTitle()
     }
 }
+

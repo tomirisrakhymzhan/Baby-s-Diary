@@ -26,6 +26,7 @@
 		BF9B46302C35957900537669 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B462F2C35957900537669 /* StatisticsView.swift */; };
 		BF9B46322C3595B100537669 /* SleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B46312C3595B100537669 /* SleepViewController.swift */; };
 		BF9B46342C35963800537669 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B46332C35963800537669 /* StatisticsViewController.swift */; };
+		BF9B46432C367ACE00537669 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B46422C367ACE00537669 /* AppRouter.swift */; };
 		BFFD1B6A2C3302EF0052699E /* OnboardingData_en.json in Resources */ = {isa = PBXBuildFile; fileRef = BFFD1B692C3302EF0052699E /* OnboardingData_en.json */; };
 		BFFD1B6C2C33035F0052699E /* OnboardingData_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = BFFD1B6B2C33035F0052699E /* OnboardingData_ru.json */; };
 		BFFD1B6E2C3303780052699E /* OnboardingData_kk.json in Resources */ = {isa = PBXBuildFile; fileRef = BFFD1B6D2C3303780052699E /* OnboardingData_kk.json */; };
@@ -54,6 +55,7 @@
 		BF9B462F2C35957900537669 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		BF9B46312C3595B100537669 /* SleepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepViewController.swift; sourceTree = "<group>"; };
 		BF9B46332C35963800537669 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		BF9B46422C367ACE00537669 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		BFFD1B692C3302EF0052699E /* OnboardingData_en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OnboardingData_en.json; sourceTree = "<group>"; };
 		BFFD1B6B2C33035F0052699E /* OnboardingData_ru.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OnboardingData_ru.json; sourceTree = "<group>"; };
 		BFFD1B6D2C3303780052699E /* OnboardingData_kk.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OnboardingData_kk.json; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		BF69D1202C21872A0005B63B /* Baby's Diary */ = {
 			isa = PBXGroup;
 			children = (
+				BF9B46412C367ABF00537669 /* Router */,
 				BF9B46352C35AE5D00537669 /* App */,
 				BF9B462C2C35947200537669 /* Statistics */,
 				BF9B462B2C35946B00537669 /* Sleep */,
@@ -180,6 +183,14 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		BF9B46412C367ABF00537669 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				BF9B46422C367ACE00537669 /* AppRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -269,6 +280,7 @@
 				BF9B462E2C35949300537669 /* SleepView.swift in Sources */,
 				BF69D1242C21872A0005B63B /* SceneDelegate.swift in Sources */,
 				BF69D16A2C29EBCC0005B63B /* OnboardingViewModel.swift in Sources */,
+				BF9B46432C367ACE00537669 /* AppRouter.swift in Sources */,
 				BF9B46322C3595B100537669 /* SleepViewController.swift in Sources */,
 				BF69D1592C2772B90005B63B /* OnboardingPageViewController.swift in Sources */,
 				BF69D1612C2777570005B63B /* OnboardingData.swift in Sources */,

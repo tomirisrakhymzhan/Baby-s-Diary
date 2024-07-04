@@ -10,34 +10,24 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var router: Router?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        let navigationController = UINavigationController()
+        let appRouter = AppRouter(navigationController: navigationController)
+        router = appRouter
+        
         let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = navigationController
         
-        //удалить все из юзердефолтс
-        let defaults = UserDefaults.standard
-        if let bundleIdentifier = Bundle.main.bundleIdentifier {
-            defaults.removePersistentDomain(forName: bundleIdentifier)
-        }
+        appRouter.start()
 
-        
-        let checkSeenOnboarding : Bool = UserDefaults.standard.bool(forKey: OnboardingViewController.KEY)
-        if checkSeenOnboarding {
-            let mainVC = TabBarViewController()
-            let navVC = UINavigationController(rootViewController: mainVC)
-            window.rootViewController = navVC
-        }else {
-            let onboardingViewController = OnboardingViewController()
-            let navVC = UINavigationController(rootViewController: onboardingViewController)
-            window.rootViewController = navVC
-        }
-        
-        self.window = window
         window.makeKeyAndVisible()
+        self.window = window
     }
-
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
