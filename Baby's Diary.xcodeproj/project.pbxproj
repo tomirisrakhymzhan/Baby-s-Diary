@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF5BE7242C36F5CA00F946E7 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BE7232C36F5CA00F946E7 /* UserDefaultsKeys.swift */; };
 		BF69D1222C21872A0005B63B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69D1212C21872A0005B63B /* AppDelegate.swift */; };
 		BF69D1242C21872A0005B63B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69D1232C21872A0005B63B /* SceneDelegate.swift */; };
 		BF69D12B2C21872D0005B63B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF69D12A2C21872D0005B63B /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF5BE7232C36F5CA00F946E7 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		BF69D11E2C21872A0005B63B /* Baby's Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Baby's Diary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF69D1212C21872A0005B63B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF69D1232C21872A0005B63B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF5BE7222C36F5AD00F946E7 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				BF5BE7232C36F5CA00F946E7 /* UserDefaultsKeys.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
 		BF69D1152C21872A0005B63B = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +101,7 @@
 		BF69D1202C21872A0005B63B /* Baby's Diary */ = {
 			isa = PBXGroup;
 			children = (
+				BF5BE7222C36F5AD00F946E7 /* UserDefaults */,
 				BF9B46412C367ABF00537669 /* Router */,
 				BF9B46352C35AE5D00537669 /* App */,
 				BF9B462C2C35947200537669 /* Statistics */,
@@ -271,6 +282,7 @@
 				BF9B46302C35957900537669 /* StatisticsView.swift in Sources */,
 				BF69D15E2C27750F0005B63B /* OnboardingPageViewModel.swift in Sources */,
 				BF69D15C2C2774E80005B63B /* OnboardingPageModel.swift in Sources */,
+				BF5BE7242C36F5CA00F946E7 /* UserDefaultsKeys.swift in Sources */,
 				BF69D1662C28982E0005B63B /* OnboardingView.swift in Sources */,
 				BF9B46282C358F2200537669 /* TabBarViewController.swift in Sources */,
 				BF69D1642C28977D0005B63B /* OnboardingViewController.swift in Sources */,

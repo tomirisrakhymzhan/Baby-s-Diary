@@ -10,7 +10,7 @@ import Combine
 
 class OnboardingViewController: UIViewController {
     
-    weak var router: Router?
+    weak var router: RouterProtocol?
     private let viewModel: OnboardingViewModel
     private var pageViewControllers: [UIViewController] = []
     private var onboardingView: OnboardingView!
@@ -84,7 +84,12 @@ class OnboardingViewController: UIViewController {
         if router == nil {
             print("router is nil")
         } else {
-            router?.showAlert()
+            router?.showConfirmationAlert(
+                title:  String(localized:"Onboarding_Alert_Title"),
+                message: String(localized: "Onboarding_Alert_Message")) { [weak self] in
+                    UserDefaults.standard.set(true, forKey: UserDefaultsKeys.ONBOARDING_KEY)
+                    self?.router?.showMainScreen()
+                }
         }
     }
     
@@ -105,7 +110,12 @@ extension OnboardingViewController: OnboardingViewDelegate {
             if router == nil {
                 print("router is nil")
             } else {
-                router?.showAlert()
+                router?.showConfirmationAlert(
+                    title:  String(localized:"Onboarding_Alert_Title"),
+                    message: String(localized: "Onboarding_Alert_Message")) { [weak self] in
+                        UserDefaults.standard.set(true, forKey: UserDefaultsKeys.ONBOARDING_KEY)
+                        self?.router?.showMainScreen()
+                    }
             }
         }
     }

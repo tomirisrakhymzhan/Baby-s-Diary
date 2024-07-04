@@ -7,18 +7,18 @@
 
 import UIKit
 
-protocol Router: AnyObject {
-    var navigationController: UINavigationController { get set }
+protocol RouterProtocol: AnyObject {
     func start()
-    func showAlert()
-    func finishOnboarding()
-    func showMainTabBar()
+    func showConfirmationAlert(title: String, message: String, completion: @escaping (()->(Void)) )
+    func showMainScreen()
 }
 
 import UIKit
 
-class AppRouter: Router {
-    var navigationController: UINavigationController
+class AppRouter: RouterProtocol {
+
+    
+    private let navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -33,15 +33,15 @@ class AppRouter: Router {
 
         // проверка прохождения онбординга
         if UserDefaults.standard.bool(forKey: "isOnboardingSeen") {
-            showMainTabBar()
+            showMainScreen()
         } else {
             showOnboarding()
         }
     }
     
     
-    func showMainTabBar() {
-        let tabBarController = TabBarViewController()
+    func showMainScreen() {
+        let tabBarController = TabBarViewController()//Factory сделать
         
         let sleepVC = SleepViewController()
         sleepVC.title = String(localized: "Onboarding_Sleep_Title")
@@ -63,23 +63,18 @@ class AppRouter: Router {
         navigationController.setViewControllers([onboardingVC], animated: true)
     }
     
-    func finishOnboarding() {
-        UserDefaults.standard.set(true, forKey: "isOnboardingSeen")
-        showMainTabBar()
-    }
-    
-    func showAlert() {
+    func showConfirmationAlert(title: String, message: String, completion: @escaping (() -> ())) {
         let alertController = UIAlertController(
-            title: String(localized:"Onboarding_Alert_Title"),
-            message: String(localized: "Onboarding_Alert_Message"),
+            title: title,
+            message: message,
             preferredStyle: .alert
         )
         
         let cancelAction = UIAlertAction(title: String(localized: "Cancel"), style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         
-        let yesAction = UIAlertAction(title: String(localized: "Yes"), style: .default) { [weak self] _ in
-            self?.finishOnboarding()
+        let yesAction = UIAlertAction(title: String(localized: "Yes"), style: .default) { _ in
+            completion()
         }
         alertController.addAction(yesAction)
         
