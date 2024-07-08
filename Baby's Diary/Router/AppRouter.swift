@@ -41,18 +41,7 @@ class AppRouter: RouterProtocol {
     
     
     func showMainScreen() {
-        let tabBarController = TabBarViewController()//Factory сделать
-        
-        let sleepVC = SleepViewController()
-        sleepVC.title = String(localized: "Onboarding_Sleep_Title")
-        sleepVC.tabBarItem.image = UIImage(systemName: "powersleep")
-        
-        let statisticsVC = StatisticsViewController()
-        statisticsVC.title = String(localized: "Onboarding_Statistics_Title")
-        statisticsVC.tabBarItem.image = UIImage(systemName: "chart.bar.fill")
-        
-        tabBarController.viewControllers = [sleepVC, statisticsVC]
-        
+        let tabBarController = TabBarFactory.createTabBarViewController()
         navigationController.setViewControllers([tabBarController], animated: true)
     }
     

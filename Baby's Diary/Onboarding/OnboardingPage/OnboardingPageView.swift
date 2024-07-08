@@ -33,6 +33,8 @@ class OnboardingPageView: UIView {
         label.numberOfLines = 0
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
         label.textColor = .darkGray
         return label
     }()
@@ -80,13 +82,25 @@ class OnboardingPageView: UIView {
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
+            mainStackView.leadingAnchor.constraint(greaterThanOrEqualTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            mainStackView.trailingAnchor.constraint(greaterThanOrEqualTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            mainStackView.topAnchor.constraint(greaterThanOrEqualTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+            mainStackView.bottomAnchor.constraint(lessThanOrEqualTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
             mainStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            NSLayoutConstraint(item: mainStackView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0),
-            mainStackView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: 20),
-            mainStackView.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -20),
-            imageView.heightAnchor.constraint(equalToConstant: 200),
-            imageView.widthAnchor.constraint(equalTo: mainStackView.widthAnchor),
+            mainStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+
+            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 0.5),
+            imageView.widthAnchor.constraint(greaterThanOrEqualTo: mainStackView.widthAnchor, multiplier: 1),
+            
+            subTitleLabel.leadingAnchor.constraint(greaterThanOrEqualTo: mainStackView.leadingAnchor, constant: 20),
+            subTitleLabel.trailingAnchor.constraint(greaterThanOrEqualTo: mainStackView.trailingAnchor, constant: -20),
         ])
+        
+        subTitleLabel.setContentHuggingPriority(.defaultLow, for: .vertical)
+        subTitleLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        
+        mainStackView.setContentHuggingPriority(.defaultLow, for: .vertical)
+        mainStackView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
     }
     
     func configure(with data: OnboardingPageViewData) {
