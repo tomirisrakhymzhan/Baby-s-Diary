@@ -9,24 +9,34 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
+//    var window: UIWindow?
+//    var router: RouterProtocol?
+//
+//    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+//        guard let windowScene = (scene as? UIWindowScene) else { return }
+//        
+//        let navigationController = UINavigationController()
+//        let appRouter = AppRouter(navigationController: navigationController)
+//        router = appRouter
+//        
+//        let window = UIWindow(windowScene: windowScene)
+//        window.rootViewController = navigationController
+//        
+//        appRouter.start()
+//
+//        window.makeKeyAndVisible()
+//        self.window = window
+//    }
+//    
     var window: UIWindow?
-    var router: RouterProtocol?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-        
-        let navigationController = UINavigationController()
-        let appRouter = AppRouter(navigationController: navigationController)
-        router = appRouter
-        
-        let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = navigationController
-        
-        appRouter.start()
-
-        window.makeKeyAndVisible()
-        self.window = window
-    }
+       guard let windowScene = (scene as? UIWindowScene) else { return }
+       window = UIWindow(windowScene: windowScene)
+       let viewController = AddBabyViewController()
+       window?.rootViewController = UINavigationController(rootViewController: viewController)
+       window?.makeKeyAndVisible()
+   }
     
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

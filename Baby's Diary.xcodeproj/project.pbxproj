@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF54BA462C3BB5CE00D8837E /* AddBabyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54BA452C3BB5CE00D8837E /* AddBabyView.swift */; };
+		BF54BA482C3BB60C00D8837E /* AddBabyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54BA472C3BB60C00D8837E /* AddBabyViewController.swift */; };
+		BF54BA4A2C3BBCFE00D8837E /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54BA492C3BBCFE00D8837E /* AppColors.swift */; };
+		BF54BA4E2C3D9BBE00D8837E /* LabeledTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54BA4D2C3D9BBE00D8837E /* LabeledTextFieldView.swift */; };
+		BF54BA502C3FF16600D8837E /* CustomCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54BA4F2C3FF16600D8837E /* CustomCalendarView.swift */; };
 		BF5BE7242C36F5CA00F946E7 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BE7232C36F5CA00F946E7 /* UserDefaultsKeys.swift */; };
 		BF5BE7262C383E6A00F946E7 /* TabBarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BE7252C383E6A00F946E7 /* TabBarFactory.swift */; };
 		BF69D1222C21872A0005B63B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69D1212C21872A0005B63B /* AppDelegate.swift */; };
@@ -35,6 +40,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF54BA452C3BB5CE00D8837E /* AddBabyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBabyView.swift; sourceTree = "<group>"; };
+		BF54BA472C3BB60C00D8837E /* AddBabyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBabyViewController.swift; sourceTree = "<group>"; };
+		BF54BA492C3BBCFE00D8837E /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		BF54BA4D2C3D9BBE00D8837E /* LabeledTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledTextFieldView.swift; sourceTree = "<group>"; };
+		BF54BA4F2C3FF16600D8837E /* CustomCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendarView.swift; sourceTree = "<group>"; };
 		BF5BE7232C36F5CA00F946E7 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		BF5BE7252C383E6A00F946E7 /* TabBarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFactory.swift; sourceTree = "<group>"; };
 		BF69D11E2C21872A0005B63B /* Baby's Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Baby's Diary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +86,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF54BA442C3BB5A300D8837E /* Baby */ = {
+			isa = PBXGroup;
+			children = (
+				BF54BA452C3BB5CE00D8837E /* AddBabyView.swift */,
+				BF54BA472C3BB60C00D8837E /* AddBabyViewController.swift */,
+			);
+			path = Baby;
+			sourceTree = "<group>";
+		};
+		BF54BA4C2C3D9BA400D8837E /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				BF54BA4D2C3D9BBE00D8837E /* LabeledTextFieldView.swift */,
+				BF54BA4F2C3FF16600D8837E /* CustomCalendarView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		BF5BE7222C36F5AD00F946E7 /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +131,8 @@
 		BF69D1202C21872A0005B63B /* Baby's Diary */ = {
 			isa = PBXGroup;
 			children = (
+				BF54BA4C2C3D9BA400D8837E /* CustomViews */,
+				BF54BA442C3BB5A300D8837E /* Baby */,
 				BF5BE7222C36F5AD00F946E7 /* UserDefaults */,
 				BF9B46412C367ABF00537669 /* Router */,
 				BF9B46352C35AE5D00537669 /* App */,
@@ -146,6 +176,7 @@
 				BFFD1B692C3302EF0052699E /* OnboardingData_en.json */,
 				BFFD1B6B2C33035F0052699E /* OnboardingData_ru.json */,
 				BFFD1B6D2C3303780052699E /* OnboardingData_kk.json */,
+				BF54BA492C3BBCFE00D8837E /* AppColors.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -251,6 +282,9 @@
 				ru,
 			);
 			mainGroup = BF69D1152C21872A0005B63B;
+			packageReferences = (
+				BF54BA432C3BB26700D8837E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = BF69D11F2C21872A0005B63B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -283,17 +317,22 @@
 			files = (
 				BF69D1572C276D9B0005B63B /* OnboardingPageView.swift in Sources */,
 				BF9B46302C35957900537669 /* StatisticsView.swift in Sources */,
+				BF54BA462C3BB5CE00D8837E /* AddBabyView.swift in Sources */,
 				BF69D15E2C27750F0005B63B /* OnboardingPageViewModel.swift in Sources */,
 				BF69D15C2C2774E80005B63B /* OnboardingPageModel.swift in Sources */,
+				BF54BA482C3BB60C00D8837E /* AddBabyViewController.swift in Sources */,
 				BF5BE7242C36F5CA00F946E7 /* UserDefaultsKeys.swift in Sources */,
 				BF69D1662C28982E0005B63B /* OnboardingView.swift in Sources */,
 				BF5BE7262C383E6A00F946E7 /* TabBarFactory.swift in Sources */,
 				BF9B46282C358F2200537669 /* TabBarViewController.swift in Sources */,
 				BF69D1642C28977D0005B63B /* OnboardingViewController.swift in Sources */,
+				BF54BA502C3FF16600D8837E /* CustomCalendarView.swift in Sources */,
 				BF9B46342C35963800537669 /* StatisticsViewController.swift in Sources */,
 				BF69D1222C21872A0005B63B /* AppDelegate.swift in Sources */,
+				BF54BA4E2C3D9BBE00D8837E /* LabeledTextFieldView.swift in Sources */,
 				BF69D1682C29EBA90005B63B /* OnboardingModel.swift in Sources */,
 				BF9B462E2C35949300537669 /* SleepView.swift in Sources */,
+				BF54BA4A2C3BBCFE00D8837E /* AppColors.swift in Sources */,
 				BF69D1242C21872A0005B63B /* SceneDelegate.swift in Sources */,
 				BF69D16A2C29EBCC0005B63B /* OnboardingViewModel.swift in Sources */,
 				BF9B46432C367ACE00537669 /* AppRouter.swift in Sources */,
@@ -513,6 +552,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BF54BA432C3BB26700D8837E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.28.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = BF69D1162C21872A0005B63B /* Project object */;
 }
