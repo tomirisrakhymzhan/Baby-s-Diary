@@ -11,6 +11,19 @@
 		BF69D1242C21872A0005B63B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69D1232C21872A0005B63B /* SceneDelegate.swift */; };
 		BF69D12B2C21872D0005B63B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF69D12A2C21872D0005B63B /* Assets.xcassets */; };
 		BF69D12E2C21872D0005B63B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BF69D12D2C21872D0005B63B /* Base */; };
+		BF69D1572C276D9B0005B63B /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69D1562C276D9B0005B63B /* OnboardingPageView.swift */; };
+		BF69D1592C2772B90005B63B /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69D1582C2772B90005B63B /* OnboardingPageViewController.swift */; };
+		BF69D15C2C2774E80005B63B /* OnboardingPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69D15B2C2774E80005B63B /* OnboardingPageModel.swift */; };
+		BF69D15E2C27750F0005B63B /* OnboardingPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69D15D2C27750F0005B63B /* OnboardingPageViewModel.swift */; };
+		BF69D1612C2777570005B63B /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69D1602C2777560005B63B /* OnboardingData.swift */; };
+		BF69D1642C28977D0005B63B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69D1632C28977D0005B63B /* OnboardingViewController.swift */; };
+		BF69D1662C28982E0005B63B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69D1652C28982E0005B63B /* OnboardingView.swift */; };
+		BF69D1682C29EBA90005B63B /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69D1672C29EBA90005B63B /* OnboardingModel.swift */; };
+		BF69D16A2C29EBCC0005B63B /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69D1692C29EBCC0005B63B /* OnboardingViewModel.swift */; };
+		BF69D16C2C2EFE3D0005B63B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BF69D16B2C2EFE3D0005B63B /* Localizable.xcstrings */; };
+		BFFD1B6A2C3302EF0052699E /* OnboardingData_en.json in Resources */ = {isa = PBXBuildFile; fileRef = BFFD1B692C3302EF0052699E /* OnboardingData_en.json */; };
+		BFFD1B6C2C33035F0052699E /* OnboardingData_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = BFFD1B6B2C33035F0052699E /* OnboardingData_ru.json */; };
+		BFFD1B6E2C3303780052699E /* OnboardingData_kk.json in Resources */ = {isa = PBXBuildFile; fileRef = BFFD1B6D2C3303780052699E /* OnboardingData_kk.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +33,20 @@
 		BF69D12A2C21872D0005B63B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF69D12D2C21872D0005B63B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF69D12F2C21872D0005B63B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF69D1562C276D9B0005B63B /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
+		BF69D1582C2772B90005B63B /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		BF69D15B2C2774E80005B63B /* OnboardingPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageModel.swift; sourceTree = "<group>"; };
+		BF69D15D2C27750F0005B63B /* OnboardingPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewModel.swift; sourceTree = "<group>"; };
+		BF69D1602C2777560005B63B /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
+		BF69D1632C28977D0005B63B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		BF69D1652C28982E0005B63B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		BF69D1672C29EBA90005B63B /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
+		BF69D1692C29EBCC0005B63B /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		BF69D16B2C2EFE3D0005B63B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		BF69D16D2C2EFE750005B63B /* kk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = kk; path = kk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		BFFD1B692C3302EF0052699E /* OnboardingData_en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OnboardingData_en.json; sourceTree = "<group>"; };
+		BFFD1B6B2C33035F0052699E /* OnboardingData_ru.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OnboardingData_ru.json; sourceTree = "<group>"; };
+		BFFD1B6D2C3303780052699E /* OnboardingData_kk.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OnboardingData_kk.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,13 +79,58 @@
 		BF69D1202C21872A0005B63B /* Baby's Diary */ = {
 			isa = PBXGroup;
 			children = (
+				BF69D15F2C2777130005B63B /* Resources */,
+				BF69D1552C276D420005B63B /* Onboarding */,
 				BF69D1212C21872A0005B63B /* AppDelegate.swift */,
 				BF69D1232C21872A0005B63B /* SceneDelegate.swift */,
-				BF69D12A2C21872D0005B63B /* Assets.xcassets */,
 				BF69D12C2C21872D0005B63B /* LaunchScreen.storyboard */,
 				BF69D12F2C21872D0005B63B /* Info.plist */,
 			);
 			path = "Baby's Diary";
+			sourceTree = "<group>";
+		};
+		BF69D1552C276D420005B63B /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				BF69D1622C27780B0005B63B /* Onboarding */,
+				BF69D15A2C2774860005B63B /* OnboardingPage */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		BF69D15A2C2774860005B63B /* OnboardingPage */ = {
+			isa = PBXGroup;
+			children = (
+				BF69D1562C276D9B0005B63B /* OnboardingPageView.swift */,
+				BF69D1582C2772B90005B63B /* OnboardingPageViewController.swift */,
+				BF69D15B2C2774E80005B63B /* OnboardingPageModel.swift */,
+				BF69D15D2C27750F0005B63B /* OnboardingPageViewModel.swift */,
+			);
+			path = OnboardingPage;
+			sourceTree = "<group>";
+		};
+		BF69D15F2C2777130005B63B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BF69D12A2C21872D0005B63B /* Assets.xcassets */,
+				BF69D1602C2777560005B63B /* OnboardingData.swift */,
+				BF69D16B2C2EFE3D0005B63B /* Localizable.xcstrings */,
+				BFFD1B692C3302EF0052699E /* OnboardingData_en.json */,
+				BFFD1B6B2C33035F0052699E /* OnboardingData_ru.json */,
+				BFFD1B6D2C3303780052699E /* OnboardingData_kk.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BF69D1622C27780B0005B63B /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				BF69D1632C28977D0005B63B /* OnboardingViewController.swift */,
+				BF69D1652C28982E0005B63B /* OnboardingView.swift */,
+				BF69D1672C29EBA90005B63B /* OnboardingModel.swift */,
+				BF69D1692C29EBCC0005B63B /* OnboardingViewModel.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,6 +175,8 @@
 			knownRegions = (
 				en,
 				Base,
+				kk,
+				ru,
 			);
 			mainGroup = BF69D1152C21872A0005B63B;
 			productRefGroup = BF69D11F2C21872A0005B63B /* Products */;
@@ -119,8 +193,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFFD1B6C2C33035F0052699E /* OnboardingData_ru.json in Resources */,
 				BF69D12B2C21872D0005B63B /* Assets.xcassets in Resources */,
+				BFFD1B6E2C3303780052699E /* OnboardingData_kk.json in Resources */,
+				BFFD1B6A2C3302EF0052699E /* OnboardingData_en.json in Resources */,
 				BF69D12E2C21872D0005B63B /* Base in Resources */,
+				BF69D16C2C2EFE3D0005B63B /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,8 +209,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF69D1572C276D9B0005B63B /* OnboardingPageView.swift in Sources */,
+				BF69D15E2C27750F0005B63B /* OnboardingPageViewModel.swift in Sources */,
+				BF69D15C2C2774E80005B63B /* OnboardingPageModel.swift in Sources */,
+				BF69D1662C28982E0005B63B /* OnboardingView.swift in Sources */,
+				BF69D1642C28977D0005B63B /* OnboardingViewController.swift in Sources */,
 				BF69D1222C21872A0005B63B /* AppDelegate.swift in Sources */,
+				BF69D1682C29EBA90005B63B /* OnboardingModel.swift in Sources */,
 				BF69D1242C21872A0005B63B /* SceneDelegate.swift in Sources */,
+				BF69D16A2C29EBCC0005B63B /* OnboardingViewModel.swift in Sources */,
+				BF69D1592C2772B90005B63B /* OnboardingPageViewController.swift in Sources */,
+				BF69D1612C2777570005B63B /* OnboardingData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +230,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				BF69D12D2C21872D0005B63B /* Base */,
+				BF69D16D2C2EFE750005B63B /* kk */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -155,6 +243,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -218,6 +307,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
