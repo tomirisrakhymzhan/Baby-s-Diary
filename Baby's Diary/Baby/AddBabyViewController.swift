@@ -16,8 +16,13 @@ class AddBabyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBar()
         setupTapGesture()
         setupCalendarView()
+    }
+    
+    func setupNavigationBar(){
+        title = String(localized: "Add_Baby_View_Title")
     }
     
     private func setupTapGesture() {

@@ -84,6 +84,7 @@ class DatePickerView: UIView {
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            chooseDateButton.heightAnchor.constraint(equalToConstant: 40),
             
         ])
     }

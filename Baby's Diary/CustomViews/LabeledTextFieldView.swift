@@ -18,6 +18,7 @@ class LabeledTextFieldView: UIView {
         let textField = UITextField()
         textField.backgroundColor = UIColor.systemPurple.withAlphaComponent(0.1)
         textField.layer.cornerRadius = 5
+        textField.returnKeyType = .done
         return textField
     }()
     
@@ -35,6 +36,8 @@ class LabeledTextFieldView: UIView {
     private func setup(){
         setupView()
         setupConstraints()
+        textField.delegate = self
+        addDoneButtonOnKeyboard()
     }
     
     private func setupView() {
@@ -58,5 +61,30 @@ class LabeledTextFieldView: UIView {
             textField.heightAnchor.constraint(equalToConstant: 40),
 
         ])
+    }
+    
+    private func addDoneButtonOnKeyboard() {
+        let doneToolbar: UIToolbar = UIToolbar()
+        doneToolbar.sizeToFit()
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: String(localized: "Done"), style: .done, target: self, action: #selector(doneButtonAction))
+        
+        let items = [flexSpace, done]
+        doneToolbar.items = items
+        doneToolbar.tintColor = .systemPurple
+        
+        textField.inputAccessoryView = doneToolbar
+    }
+    
+    @objc private func doneButtonAction() {
+        textField.resignFirstResponder()
+    }
+}
+
+extension LabeledTextFieldView : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
