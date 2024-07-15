@@ -7,11 +7,8 @@
 
 import UIKit
 
-import UIKit
-
 class AddBabyViewController: UIViewController {
     private let addBabyView = AddBabyView()
-    private var isCalendarViewVisible = false
 
     override func loadView() {
         view = addBabyView
@@ -19,13 +16,8 @@ class AddBabyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupActions()
         setupTapGesture()
         setupCalendarView()
-    }
-    
-    private func setupActions() {
-        addBabyView.birthDateView.chooseDateButton.addTarget(self, action: #selector(toggleCalendarView), for: .touchUpInside)
     }
     
     private func setupTapGesture() {
@@ -36,15 +28,6 @@ class AddBabyViewController: UIViewController {
     private func setupCalendarView() {
         let singleDateSelection = UICalendarSelectionSingleDate(delegate: self)
         addBabyView.birthDateView.calendarView.selectionBehavior = singleDateSelection
-    }
-    
-    @objc private func toggleCalendarView() {
-        isCalendarViewVisible.toggle()
-        addBabyView.birthDateView.calendarView.isHidden = !isCalendarViewVisible
-
-        UIView.animate(withDuration: 0.3) {
-            self.view.layoutIfNeeded()
-        }
     }
     
     @objc private func handleTap(_ sender: UITapGestureRecognizer) {
@@ -61,7 +44,6 @@ extension AddBabyViewController: UICalendarSelectionSingleDateDelegate {
         dateFormatter.locale = Locale.autoupdatingCurrent
         let selectedDate = dateFormatter.string(from: date)
         addBabyView.birthDateView.chooseDateButton.setTitle(selectedDate, for: .normal)
-        
-        toggleCalendarView()
+        addBabyView.birthDateView.toggleCalendarView()
     }
 }

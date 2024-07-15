@@ -16,17 +16,12 @@ class AddBabyView: UIView {
         return stackView
     }()
     
-    private let titleLabel: UILabel = createLabel(text: String(localized: "Add_Baby_View_Title"), font: .boldSystemFont(ofSize: 24))
-    
-    private let babyNameView = LabeledTextFieldView(labelText: String(localized: "Add_Baby_Name"), keyboardType: .default)
-    
-    let birthDateView = CustomCalendarView(labelText: String(localized: "Add_Baby_DOB"))
-    
-    private let weightView = LabeledTextFieldView(labelText: String(localized: "Add_Baby_Weight"), keyboardType: .numberPad)
-    
-    private let heightView = LabeledTextFieldView(labelText: String(localized: "Add_Baby_Height"), keyboardType: .numberPad)
-    
-    private let headCircumferenceView = LabeledTextFieldView(labelText: String(localized: "Add_Baby_Head_Circumference"), keyboardType: .numberPad)
+    let titleLabel: UILabel = createLabel(text: String(localized: "Add_Baby_View_Title"), font: .boldSystemFont(ofSize: 24))
+    let babyNameView = LabeledTextFieldView(labelText: String(localized: "Add_Baby_Name"), keyboardType: .default)
+    let birthDateView = DatePickerView(labelText: String(localized: "Add_Baby_DOB"))
+    let weightView = LabeledTextFieldView(labelText: String(localized: "Add_Baby_Weight"), keyboardType: .decimalPad)
+    let heightView = LabeledTextFieldView(labelText: String(localized: "Add_Baby_Height"), keyboardType: .numberPad)
+    let headCircumferenceView = LabeledTextFieldView(labelText: String(localized: "Add_Baby_Head_Circumference"), keyboardType: .numberPad)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

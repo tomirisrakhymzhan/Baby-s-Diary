@@ -7,8 +7,10 @@
 
 import UIKit
 
-class CustomCalendarView: UIView {
+class DatePickerView: UIView {
     
+    private var isCalendarViewVisible = false
+
     let label: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17)
@@ -19,6 +21,8 @@ class CustomCalendarView: UIView {
         let button = UIButton(type: .system)
         button.setTitle(String(localized: "Not_Chosen"), for: .normal)
         button.setTitleColor(.systemPurple, for: .normal)
+        button.layer.cornerRadius = 5
+        button.backgroundColor =  UIColor.systemPurple.withAlphaComponent(0.1)
         return button
     }()
     
@@ -56,6 +60,7 @@ class CustomCalendarView: UIView {
     
     private func setup() {
         setupView()
+        setupActions()
         setupConstraints()
     }
     
@@ -64,6 +69,10 @@ class CustomCalendarView: UIView {
         stackView.addArrangedSubview(label)
         stackView.addArrangedSubview(chooseDateButton)
         stackView.addArrangedSubview(calendarView)
+    }
+    
+    private func setupActions() {
+        chooseDateButton.addTarget(self, action: #selector(toggleCalendarView), for: .touchUpInside)
     }
     
     private func setupConstraints() {
@@ -77,6 +86,15 @@ class CustomCalendarView: UIView {
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
         ])
+    }
+    
+    @objc func toggleCalendarView() {
+        isCalendarViewVisible.toggle()
+        calendarView.isHidden = !isCalendarViewVisible
+
+        UIView.animate(withDuration: 0.3) {
+            self.layoutIfNeeded()
+        }
     }
 }
 

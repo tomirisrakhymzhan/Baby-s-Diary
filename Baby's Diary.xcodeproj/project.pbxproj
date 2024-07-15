@@ -11,7 +11,7 @@
 		BF54BA482C3BB60C00D8837E /* AddBabyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54BA472C3BB60C00D8837E /* AddBabyViewController.swift */; };
 		BF54BA4A2C3BBCFE00D8837E /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54BA492C3BBCFE00D8837E /* AppColors.swift */; };
 		BF54BA4E2C3D9BBE00D8837E /* LabeledTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54BA4D2C3D9BBE00D8837E /* LabeledTextFieldView.swift */; };
-		BF54BA502C3FF16600D8837E /* CustomCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54BA4F2C3FF16600D8837E /* CustomCalendarView.swift */; };
+		BF54BA502C3FF16600D8837E /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54BA4F2C3FF16600D8837E /* DatePickerView.swift */; };
 		BF5BE7242C36F5CA00F946E7 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BE7232C36F5CA00F946E7 /* UserDefaultsKeys.swift */; };
 		BF5BE7262C383E6A00F946E7 /* TabBarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BE7252C383E6A00F946E7 /* TabBarFactory.swift */; };
 		BF69D1222C21872A0005B63B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69D1212C21872A0005B63B /* AppDelegate.swift */; };
@@ -44,7 +44,7 @@
 		BF54BA472C3BB60C00D8837E /* AddBabyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBabyViewController.swift; sourceTree = "<group>"; };
 		BF54BA492C3BBCFE00D8837E /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		BF54BA4D2C3D9BBE00D8837E /* LabeledTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledTextFieldView.swift; sourceTree = "<group>"; };
-		BF54BA4F2C3FF16600D8837E /* CustomCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendarView.swift; sourceTree = "<group>"; };
+		BF54BA4F2C3FF16600D8837E /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		BF5BE7232C36F5CA00F946E7 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		BF5BE7252C383E6A00F946E7 /* TabBarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFactory.swift; sourceTree = "<group>"; };
 		BF69D11E2C21872A0005B63B /* Baby's Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Baby's Diary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,7 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				BF54BA4D2C3D9BBE00D8837E /* LabeledTextFieldView.swift */,
-				BF54BA4F2C3FF16600D8837E /* CustomCalendarView.swift */,
+				BF54BA4F2C3FF16600D8837E /* DatePickerView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -326,7 +326,7 @@
 				BF5BE7262C383E6A00F946E7 /* TabBarFactory.swift in Sources */,
 				BF9B46282C358F2200537669 /* TabBarViewController.swift in Sources */,
 				BF69D1642C28977D0005B63B /* OnboardingViewController.swift in Sources */,
-				BF54BA502C3FF16600D8837E /* CustomCalendarView.swift in Sources */,
+				BF54BA502C3FF16600D8837E /* DatePickerView.swift in Sources */,
 				BF9B46342C35963800537669 /* StatisticsViewController.swift in Sources */,
 				BF69D1222C21872A0005B63B /* AppDelegate.swift in Sources */,
 				BF54BA4E2C3D9BBE00D8837E /* LabeledTextFieldView.swift in Sources */,
