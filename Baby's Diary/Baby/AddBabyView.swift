@@ -27,6 +27,15 @@ class AddBabyView: UIView {
     let heightView = LabeledTextFieldView(labelText: String(localized: "Add_Baby_Height") + ", " + String(localized: "cm") , keyboardType: .decimalPad)
     let headCircumferenceView = LabeledTextFieldView(labelText: String(localized: "Add_Baby_Head_Circumference") + ", " + String(localized: "cm") , keyboardType: .decimalPad)
     
+    let addButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle(String(localized:"Add_Baby"), for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .systemPurple
+        button.layer.cornerRadius = 5
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -50,6 +59,7 @@ class AddBabyView: UIView {
         stackView.addArrangedSubview(weightView)
         stackView.addArrangedSubview(heightView)
         stackView.addArrangedSubview(headCircumferenceView)
+        stackView.addArrangedSubview(addButton)
     }
     
     private func setupConstraints() {
@@ -67,7 +77,9 @@ class AddBabyView: UIView {
             stackView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor, constant: -16),
             stackView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor, constant: -16),
-            stackView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor, constant: -32)
+            stackView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor, constant: -32),
+            
+            addButton.heightAnchor.constraint(equalToConstant: 40)
             
         ])
     }

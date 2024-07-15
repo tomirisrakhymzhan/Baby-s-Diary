@@ -34,6 +34,7 @@
 		BF9B46322C3595B100537669 /* SleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B46312C3595B100537669 /* SleepViewController.swift */; };
 		BF9B46342C35963800537669 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B46332C35963800537669 /* StatisticsViewController.swift */; };
 		BF9B46432C367ACE00537669 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B46422C367ACE00537669 /* AppRouter.swift */; };
+		BFAECBBF2C4525B10064D62E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAECBBE2C4525B10064D62E /* LoadingView.swift */; };
 		BFFD1B6A2C3302EF0052699E /* OnboardingData_en.json in Resources */ = {isa = PBXBuildFile; fileRef = BFFD1B692C3302EF0052699E /* OnboardingData_en.json */; };
 		BFFD1B6C2C33035F0052699E /* OnboardingData_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = BFFD1B6B2C33035F0052699E /* OnboardingData_ru.json */; };
 		BFFD1B6E2C3303780052699E /* OnboardingData_kk.json in Resources */ = {isa = PBXBuildFile; fileRef = BFFD1B6D2C3303780052699E /* OnboardingData_kk.json */; };
@@ -70,6 +71,7 @@
 		BF9B46312C3595B100537669 /* SleepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepViewController.swift; sourceTree = "<group>"; };
 		BF9B46332C35963800537669 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		BF9B46422C367ACE00537669 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		BFAECBBE2C4525B10064D62E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		BFFD1B692C3302EF0052699E /* OnboardingData_en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OnboardingData_en.json; sourceTree = "<group>"; };
 		BFFD1B6B2C33035F0052699E /* OnboardingData_ru.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OnboardingData_ru.json; sourceTree = "<group>"; };
 		BFFD1B6D2C3303780052699E /* OnboardingData_kk.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OnboardingData_kk.json; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				BF54BA4D2C3D9BBE00D8837E /* LabeledTextFieldView.swift */,
 				BF54BA4F2C3FF16600D8837E /* DatePickerView.swift */,
+				BFAECBBE2C4525B10064D62E /* LoadingView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				BF69D1682C29EBA90005B63B /* OnboardingModel.swift in Sources */,
 				BF9B462E2C35949300537669 /* SleepView.swift in Sources */,
 				BF54BA4A2C3BBCFE00D8837E /* AppColors.swift in Sources */,
+				BFAECBBF2C4525B10064D62E /* LoadingView.swift in Sources */,
 				BF69D1242C21872A0005B63B /* SceneDelegate.swift in Sources */,
 				BF69D16A2C29EBCC0005B63B /* OnboardingViewModel.swift in Sources */,
 				BF9B46432C367ACE00537669 /* AppRouter.swift in Sources */,

@@ -9,7 +9,8 @@ import UIKit
 
 class AddBabyViewController: UIViewController {
     private let addBabyView = AddBabyView()
-
+    private let loadingView = LoadingView(message: String(localized: "Adding_Baby"))
+    
     override func loadView() {
         view = addBabyView
     }
@@ -19,6 +20,7 @@ class AddBabyViewController: UIViewController {
         setupNavigationBar()
         setupTapGesture()
         setupCalendarView()
+        setupActions()
     }
     
     func setupNavigationBar(){
@@ -35,8 +37,20 @@ class AddBabyViewController: UIViewController {
         addBabyView.birthDateView.calendarView.selectionBehavior = singleDateSelection
     }
     
+    private func setupActions() {
+        addBabyView.addButton.addTarget(self, action: #selector(addBabyButtonTapped), for: .touchUpInside)
+    }
+    
     @objc private func handleTap(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
+    }
+    
+    @objc private func addBabyButtonTapped() {
+        loadingView.show(on: view)
+                
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.loadingView.hide()
+        }
     }
 }
 
