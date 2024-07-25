@@ -21,6 +21,14 @@ class AddBabyView: UIView {
         return stackView
     }()
     
+    let title : UILabel = {
+        let label = UILabel()
+        label.text = String(localized: "Add_Baby")
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        return label
+    }()
+
     let babyNameView = LabeledTextFieldView(labelText: String(localized: "Add_Baby_Name"), keyboardType: .default)
     let birthDateView = DatePickerView(labelText: String(localized: "Add_Baby_DOB"))
     let weightView = LabeledTextFieldView(labelText: String(localized: "Add_Baby_Weight") + ", " + String(localized: "cm"), keyboardType: .decimalPad)
@@ -54,6 +62,7 @@ class AddBabyView: UIView {
         backgroundColor = .white
         addSubview(scrollView)
         scrollView.addSubview(stackView)
+        stackView.addArrangedSubview(title)
         stackView.addArrangedSubview(babyNameView)
         stackView.addArrangedSubview(birthDateView)
         stackView.addArrangedSubview(weightView)

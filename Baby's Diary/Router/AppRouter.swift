@@ -11,9 +11,9 @@ protocol RouterProtocol: AnyObject {
     func start()
     func showConfirmationAlert(title: String, message: String, completion: @escaping (()->(Void)) )
     func showMainScreen()
+    func showSignIn()
+    func showAddBabyForm()
 }
-
-import UIKit
 
 class AppRouter: RouterProtocol {
 
@@ -68,5 +68,16 @@ class AppRouter: RouterProtocol {
         alertController.addAction(yesAction)
         
         navigationController.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showSignIn() {
+        let signInVC = SignInViewController()
+        signInVC.router = self
+        navigationController.setViewControllers([signInVC], animated: true)
+    }
+    
+    func showAddBabyForm() {
+        let addBabyVC = AddBabyViewController()
+        navigationController.setViewControllers([addBabyVC], animated: true)
     }
 }
