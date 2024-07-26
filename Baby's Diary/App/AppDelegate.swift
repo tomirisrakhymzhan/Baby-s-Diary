@@ -7,6 +7,8 @@
 
 import UIKit
 import FirebaseCore
+import Firebase
+import FirebaseAppCheck
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,9 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        FirebaseApp.configure()
+        configureFirebase()
         return true
     }
+    
+    func configureFirebase() {
+        FirebaseApp.configure()
+
+//        #if targetEnvironment(simulator)
+//        // Disable App Check for Simulator
+//        AppCheck.setAppCheckProviderFactory(nil)
+//        #else
+//        // Use default App Check provider
+//        AppCheck.setAppCheckProviderFactory(AppCheckDebugProviderFactory())
+//        #endif
+    }
+
 
     // MARK: UISceneSession Lifecycle
 

@@ -53,6 +53,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
 
     @objc private func registerButtonButtonTapped() {
         print("registerButtonButtonTapped")
+        router?.showRegistration()
     }
 
     private func setupBindings() {

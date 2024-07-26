@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF394AC12C528BB8009C9945 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF394AC02C528BB8009C9945 /* RegistrationView.swift */; };
+		BF394AC32C528BD1009C9945 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF394AC22C528BD1009C9945 /* RegistrationViewController.swift */; };
+		BF394AC52C528C03009C9945 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF394AC42C528C03009C9945 /* RegistrationViewModel.swift */; };
+		BF394AC72C529415009C9945 /* RegistrationConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF394AC62C529415009C9945 /* RegistrationConfirmationViewController.swift */; };
+		BF394AC92C529428009C9945 /* RegistrationConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF394AC82C529428009C9945 /* RegistrationConfirmationView.swift */; };
 		BF43DB742C4A3802006FDB0D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF43DB732C4A3802006FDB0D /* SignInView.swift */; };
 		BF43DB762C4A3817006FDB0D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF43DB752C4A3817006FDB0D /* SignInViewController.swift */; };
 		BF43DB782C4A3A8C006FDB0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF43DB772C4A3A8C006FDB0D /* GoogleService-Info.plist */; };
@@ -51,6 +56,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF394AC02C528BB8009C9945 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		BF394AC22C528BD1009C9945 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		BF394AC42C528C03009C9945 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		BF394AC62C529415009C9945 /* RegistrationConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationConfirmationViewController.swift; sourceTree = "<group>"; };
+		BF394AC82C529428009C9945 /* RegistrationConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationConfirmationView.swift; sourceTree = "<group>"; };
 		BF43DB732C4A3802006FDB0D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		BF43DB752C4A3817006FDB0D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		BF43DB772C4A3A8C006FDB0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -108,6 +118,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF394ABF2C528B85009C9945 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				BF394AC02C528BB8009C9945 /* RegistrationView.swift */,
+				BF394AC22C528BD1009C9945 /* RegistrationViewController.swift */,
+				BF394AC42C528C03009C9945 /* RegistrationViewModel.swift */,
+				BF394AC62C529415009C9945 /* RegistrationConfirmationViewController.swift */,
+				BF394AC82C529428009C9945 /* RegistrationConfirmationView.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
 		BF43DB722C4A37CC006FDB0D /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +186,7 @@
 		BF69D1202C21872A0005B63B /* Baby's Diary */ = {
 			isa = PBXGroup;
 			children = (
+				BF394ABF2C528B85009C9945 /* Registration */,
 				BF43DB772C4A3A8C006FDB0D /* GoogleService-Info.plist */,
 				BF43DB722C4A37CC006FDB0D /* Authorization */,
 				BF54BA4C2C3D9BA400D8837E /* CustomViews */,
@@ -360,6 +383,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF69D1572C276D9B0005B63B /* OnboardingPageView.swift in Sources */,
+				BF394AC52C528C03009C9945 /* RegistrationViewModel.swift in Sources */,
+				BF394AC92C529428009C9945 /* RegistrationConfirmationView.swift in Sources */,
 				BF9B46302C35957900537669 /* StatisticsView.swift in Sources */,
 				BF54BA462C3BB5CE00D8837E /* AddBabyView.swift in Sources */,
 				BF69D15E2C27750F0005B63B /* OnboardingPageViewModel.swift in Sources */,
@@ -368,6 +393,7 @@
 				BF5BE7242C36F5CA00F946E7 /* UserDefaultsKeys.swift in Sources */,
 				BF69D1662C28982E0005B63B /* OnboardingView.swift in Sources */,
 				BF43DB862C4AB84B006FDB0D /* SignInViewModel.swift in Sources */,
+				BF394AC72C529415009C9945 /* RegistrationConfirmationViewController.swift in Sources */,
 				BF5BE7262C383E6A00F946E7 /* TabBarFactory.swift in Sources */,
 				BF9B46282C358F2200537669 /* TabBarViewController.swift in Sources */,
 				BF69D1642C28977D0005B63B /* OnboardingViewController.swift in Sources */,
@@ -375,6 +401,7 @@
 				BF43DB742C4A3802006FDB0D /* SignInView.swift in Sources */,
 				BF9B46342C35963800537669 /* StatisticsViewController.swift in Sources */,
 				BF43DB762C4A3817006FDB0D /* SignInViewController.swift in Sources */,
+				BF394AC12C528BB8009C9945 /* RegistrationView.swift in Sources */,
 				BF69D1222C21872A0005B63B /* AppDelegate.swift in Sources */,
 				BF54BA4E2C3D9BBE00D8837E /* LabeledTextFieldView.swift in Sources */,
 				BF69D1682C29EBA90005B63B /* OnboardingModel.swift in Sources */,
@@ -382,6 +409,7 @@
 				BF54BA4A2C3BBCFE00D8837E /* AppColors.swift in Sources */,
 				BFAECBBF2C4525B10064D62E /* LoadingView.swift in Sources */,
 				BF69D1242C21872A0005B63B /* SceneDelegate.swift in Sources */,
+				BF394AC32C528BD1009C9945 /* RegistrationViewController.swift in Sources */,
 				BF69D16A2C29EBCC0005B63B /* OnboardingViewModel.swift in Sources */,
 				BF9B46432C367ACE00537669 /* AppRouter.swift in Sources */,
 				BF9B46322C3595B100537669 /* SleepViewController.swift in Sources */,

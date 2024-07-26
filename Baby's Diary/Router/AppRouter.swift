@@ -13,6 +13,8 @@ protocol RouterProtocol: AnyObject {
     func showMainScreen()
     func showSignIn()
     func showAddBabyForm()
+    func showRegistration()
+    func showRegistrationConfirmation()
 }
 
 class AppRouter: RouterProtocol {
@@ -79,5 +81,18 @@ class AppRouter: RouterProtocol {
     func showAddBabyForm() {
         let addBabyVC = AddBabyViewController()
         navigationController.setViewControllers([addBabyVC], animated: true)
+    }
+    
+    func showRegistration() {
+        let registrationVC = RegistrationViewController()
+        registrationVC.router = self
+        navigationController.pushViewController(registrationVC, animated: true)
+    }
+    
+    func showRegistrationConfirmation(){
+        let regConfVC = RegistrationConfirmationViewController()
+        regConfVC.router = self
+        regConfVC.modalPresentationStyle = .fullScreen
+        navigationController.present(regConfVC, animated: true)
     }
 }
