@@ -18,8 +18,6 @@ class RegistrationViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var isSignUpSuccessful: Bool = false
 
-    private var cancellables = Set<AnyCancellable>()
-
     func signUp() {
         // Validate email and password before sign-up
         emailError = validateEmail(email)
