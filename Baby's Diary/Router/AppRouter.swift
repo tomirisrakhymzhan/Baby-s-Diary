@@ -92,7 +92,6 @@ class AppRouter: RouterProtocol {
     func showRegistrationConfirmation(){
         let regConfVC = RegistrationConfirmationViewController()
         regConfVC.router = self
-        regConfVC.modalPresentationStyle = .fullScreen
-        navigationController.present(regConfVC, animated: true)
+        navigationController.setViewControllers([regConfVC], animated: true)
     }
 }

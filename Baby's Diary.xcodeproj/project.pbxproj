@@ -12,6 +12,8 @@
 		BF394AC52C528C03009C9945 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF394AC42C528C03009C9945 /* RegistrationViewModel.swift */; };
 		BF394AC72C529415009C9945 /* RegistrationConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF394AC62C529415009C9945 /* RegistrationConfirmationViewController.swift */; };
 		BF394AC92C529428009C9945 /* RegistrationConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF394AC82C529428009C9945 /* RegistrationConfirmationView.swift */; };
+		BF394ADA2C5A8979009C9945 /* RegistrationConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF394AD92C5A8979009C9945 /* RegistrationConfirmationViewModel.swift */; };
+		BF394ADD2C5A89D1009C9945 /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = BF394ADC2C5A89D1009C9945 /* SwiftMessages */; };
 		BF43DB742C4A3802006FDB0D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF43DB732C4A3802006FDB0D /* SignInView.swift */; };
 		BF43DB762C4A3817006FDB0D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF43DB752C4A3817006FDB0D /* SignInViewController.swift */; };
 		BF43DB782C4A3A8C006FDB0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF43DB772C4A3A8C006FDB0D /* GoogleService-Info.plist */; };
@@ -61,6 +63,7 @@
 		BF394AC42C528C03009C9945 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		BF394AC62C529415009C9945 /* RegistrationConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationConfirmationViewController.swift; sourceTree = "<group>"; };
 		BF394AC82C529428009C9945 /* RegistrationConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationConfirmationView.swift; sourceTree = "<group>"; };
+		BF394AD92C5A8979009C9945 /* RegistrationConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationConfirmationViewModel.swift; sourceTree = "<group>"; };
 		BF43DB732C4A3802006FDB0D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		BF43DB752C4A3817006FDB0D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		BF43DB772C4A3A8C006FDB0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -107,6 +110,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF43DB7E2C4A57BC006FDB0D /* FirebaseAnalyticsSwift in Frameworks */,
+				BF394ADD2C5A89D1009C9945 /* SwiftMessages in Frameworks */,
 				BF43DB842C4A5911006FDB0D /* FirebaseAuth in Frameworks */,
 				BF43DB7A2C4A57BC006FDB0D /* FirebaseAnalytics in Frameworks */,
 				BF43DB7C2C4A57BC006FDB0D /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
@@ -126,6 +130,7 @@
 				BF394AC42C528C03009C9945 /* RegistrationViewModel.swift */,
 				BF394AC62C529415009C9945 /* RegistrationConfirmationViewController.swift */,
 				BF394AC82C529428009C9945 /* RegistrationConfirmationView.swift */,
+				BF394AD92C5A8979009C9945 /* RegistrationConfirmationViewModel.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -317,6 +322,7 @@
 				BF43DB7F2C4A57BC006FDB0D /* FirebaseAnalyticsWithoutAdIdSupport */,
 				BF43DB812C4A57BC006FDB0D /* FirebaseAppCheck */,
 				BF43DB832C4A5911006FDB0D /* FirebaseAuth */,
+				BF394ADC2C5A89D1009C9945 /* SwiftMessages */,
 			);
 			productName = "Baby's Diary";
 			productReference = BF69D11E2C21872A0005B63B /* Baby's Diary.app */;
@@ -350,6 +356,7 @@
 			mainGroup = BF69D1152C21872A0005B63B;
 			packageReferences = (
 				BF54BA432C3BB26700D8837E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				BF394ADB2C5A89D1009C9945 /* XCRemoteSwiftPackageReference "SwiftMessages" */,
 			);
 			productRefGroup = BF69D11F2C21872A0005B63B /* Products */;
 			projectDirPath = "";
@@ -404,6 +411,7 @@
 				BF394AC12C528BB8009C9945 /* RegistrationView.swift in Sources */,
 				BF69D1222C21872A0005B63B /* AppDelegate.swift in Sources */,
 				BF54BA4E2C3D9BBE00D8837E /* LabeledTextFieldView.swift in Sources */,
+				BF394ADA2C5A8979009C9945 /* RegistrationConfirmationViewModel.swift in Sources */,
 				BF69D1682C29EBA90005B63B /* OnboardingModel.swift in Sources */,
 				BF9B462E2C35949300537669 /* SleepView.swift in Sources */,
 				BF54BA4A2C3BBCFE00D8837E /* AppColors.swift in Sources */,
@@ -630,6 +638,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BF394ADB2C5A89D1009C9945 /* XCRemoteSwiftPackageReference "SwiftMessages" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftKickMobile/SwiftMessages";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 		BF54BA432C3BB26700D8837E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -641,6 +657,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BF394ADC2C5A89D1009C9945 /* SwiftMessages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF394ADB2C5A89D1009C9945 /* XCRemoteSwiftPackageReference "SwiftMessages" */;
+			productName = SwiftMessages;
+		};
 		BF43DB792C4A57BC006FDB0D /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BF54BA432C3BB26700D8837E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
