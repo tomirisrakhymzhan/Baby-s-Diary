@@ -14,7 +14,7 @@ class ForgotPasswordViewModel {
                 completion(.failure(error))
                 return
             }
-            completion(.success("Ссылка на сброс пароль выслана на вашу эл. почту"))
+            completion(.success(String(localized: "Password_Reset_Link_Sent")))
         }
     }
 }

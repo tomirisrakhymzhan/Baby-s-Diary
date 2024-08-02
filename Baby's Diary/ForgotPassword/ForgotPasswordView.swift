@@ -10,7 +10,7 @@ import UIKit
 class ForgotPasswordView : UIView {
     let titleLabel : UILabel = {
         let label = UILabel()
-        label.text = "Сброс пароля"
+        label.text = String(localized: "Password_Reset")
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
         return label
@@ -27,7 +27,7 @@ class ForgotPasswordView : UIView {
     
     let sendPasswordLinkButton: UIButton = {
         var configuration = UIButton.Configuration.filled()
-        configuration.title = "Отправить ссылку для сброса"
+        configuration.title = String(localized: "Send_Password_Reset_Link")
         configuration.baseBackgroundColor = .systemPurple
         configuration.baseForegroundColor = .white
         configuration.cornerStyle = .medium

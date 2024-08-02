@@ -8,7 +8,7 @@
 import UIKit
 import SwiftMessages
 
-class ForgotPasswordViewController: UIViewController {
+class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
     
     weak var router: RouterProtocol?
     let forgotPasswordView = ForgotPasswordView()
@@ -36,12 +36,15 @@ class ForgotPasswordViewController: UIViewController {
     
     private func setupActions() {
         forgotPasswordView.sendPasswordLinkButton.addTarget(self, action: #selector(sendPasswordLinkButtonPressed), for: .touchUpInside)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        view.addGestureRecognizer(tapGesture)
+        forgotPasswordView.emailTextField.delegate = self
     }
     
     @objc func sendPasswordLinkButtonPressed(){
         print("sendPasswordLinkButtonPressed")
         guard let email = forgotPasswordView.emailTextField.text, !email.isEmpty else {
-            showMessage("Пожалуйста, введите свою эл. почту", type: .error)
+            showMessage(String(localized: "Enter_Your_Email"), type: .error)
             return
         }
         
@@ -55,6 +58,10 @@ class ForgotPasswordViewController: UIViewController {
         }
     }
     
+    @objc private func handleTap(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
     private func showMessage(_ message: String, type: Theme) {
         let messageView = MessageView.viewFromNib(layout: .messageView)
         messageView.configureTheme(type)
@@ -62,6 +69,12 @@ class ForgotPasswordViewController: UIViewController {
         var config = SwiftMessages.defaultConfig
         config.duration = .seconds(seconds: 3)
         SwiftMessages.show(config: config, view: messageView)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // hide  keyboard when "Done" is tapped
+        textField.resignFirstResponder()
+        return true
     }
 
 }

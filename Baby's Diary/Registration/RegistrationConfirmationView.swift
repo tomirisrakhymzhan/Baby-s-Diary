@@ -18,7 +18,7 @@ class RegistrationConfirmationView: UIView {
     
     let messageLabel: UILabel = {
         let label = UILabel()
-        label.text = "Пожалуйста, подтвердите свой адрес электронной почты!"
+        label.text = String(localized: "Confirm_Email")
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -26,7 +26,7 @@ class RegistrationConfirmationView: UIView {
     
     let sendLinkButton: UIButton = {
         var configuration = UIButton.Configuration.filled()
-        configuration.title = "Отправить ссылку для подтверждения"
+        configuration.title = String(localized: "Send_Confirmation_Email")
         configuration.baseBackgroundColor = .systemPurple
         configuration.baseForegroundColor = .white
         configuration.cornerStyle = .medium
@@ -39,14 +39,14 @@ class RegistrationConfirmationView: UIView {
     
     let verifiedLabel: UILabel = {
         let label = UILabel()
-        label.text = "Уже подтвердили?"
+        label.text = String(localized: "Already_Confirmed")
         label.font = UIFont.systemFont(ofSize: 16)
         return label
     }()
     
     let checkButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Проверить", for: .normal)
+        button.setTitle(String(localized: "Check"), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         button.setTitleColor(.systemPurple, for: .normal)
         return button
@@ -62,7 +62,7 @@ class RegistrationConfirmationView: UIView {
     
     let logoutButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Выйти", for: .normal)
+        button.setTitle(String(localized: "Exit"), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         button.setTitleColor(.systemPurple, for: .normal)
         return button

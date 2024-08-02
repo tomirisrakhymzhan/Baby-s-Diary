@@ -208,6 +208,52 @@
         }
       }
     },
+    "Already_Confirmed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Already confirmed?"
+          }
+        },
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Қазірдің өзінде расталды ма?"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Уже подтвердили?"
+          }
+        }
+      }
+    },
+    "Are_Sure_You_Want_Exit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to exit?"
+          }
+        },
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сіз шыққыңыз келетініне сенімдісіз бе?"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вы уверены что хотите выйти?"
+          }
+        }
+      }
+    },
     "Authorization_Title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -254,6 +300,29 @@
         }
       }
     },
+    "Check" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check"
+          }
+        },
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тексеру"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверить"
+          }
+        }
+      }
+    },
     "cm" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -273,6 +342,52 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "см"
+          }
+        }
+      }
+    },
+    "Confirm_Email" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please confirm your email address"
+          }
+        },
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Электрондық пошта мекенжайыңызды растаңыз"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пожалуйста, подтвердите свой адрес электронной почты"
+          }
+        }
+      }
+    },
+    "Confirmation_Email_Sent" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirmation email was sent"
+          }
+        },
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Растау сілтемесі сіздің поштаңызға жіберілді"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ссылка для подтверждения отправлена на вашу почту"
           }
         }
       }
@@ -319,6 +434,98 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Эл. почта"
+          }
+        }
+      }
+    },
+    "Email_Not_Yet_Verified_Message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The mail has not been confirmed yet"
+          }
+        },
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пошта әлі расталған жоқ"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Почта еще не подтверждена"
+          }
+        }
+      }
+    },
+    "Email_Verified_Message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your email has been successfully verified"
+          }
+        },
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сіздің поштаңыз сәтті расталды"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ваша почта успешно подтверждена"
+          }
+        }
+      }
+    },
+    "Enter_Your_Email" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please, enter your email"
+          }
+        },
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поштаңызды енгізіңіз"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пожалуйста, введите свою эл. почту"
+          }
+        }
+      }
+    },
+    "Exit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exit"
+          }
+        },
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Шығу"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выйти"
           }
         }
       }
@@ -852,6 +1059,52 @@
         }
       }
     },
+    "Password_Reset" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password reset"
+          }
+        },
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Құпия сөзді қалпына келтіру"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сброс пароля"
+          }
+        }
+      }
+    },
+    "Password_Reset_Link_Sent" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A link to reset the password has been sent to your email"
+          }
+        },
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Құпия сөзді қалпына келтіру сілтемесі сіздің электрондық поштаңызға жіберіледі"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ссылка на сброс пароль выслана на вашу эл. почту"
+          }
+        }
+      }
+    },
     "Passwords_Do_Not_Match" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -967,6 +1220,52 @@
         }
       }
     },
+    "Send_Confirmation_Email" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send a confirmation link"
+          }
+        },
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Растау сілтемесін жіберу"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отправить ссылку для подтверждения"
+          }
+        }
+      }
+    },
+    "Send_Password_Reset_Link" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send password reset link"
+          }
+        },
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Қалпына келтіру сілтемесін жіберіңіз"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отправить ссылку для сброса"
+          }
+        }
+      }
+    },
     "Sign_In" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -986,6 +1285,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Войти"
+          }
+        }
+      }
+    },
+    "User_Not_Found" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "User was not found"
+          }
+        },
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пайдаланушы табылмады"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пользователь не найден"
           }
         }
       }

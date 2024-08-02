@@ -56,15 +56,15 @@ class RegistrationConfirmationViewController: UIViewController {
     @objc private func checkButtonPressed() {
         viewModel.checkEmailVerified { [weak self] isVerified in
             if isVerified {
-                self?.showMessage("Ваша почта успешно подтверждена.", type: .success)
+                self?.showMessage(String(localized: "Email_Verified_Message"), type: .success)
             } else {
-                self?.showMessage("Почта еще не подтверждена.", type: .warning)
+                self?.showMessage(String(localized: "Email_Not_Yet_Verified_Message"), type: .warning)
             }
         }
     }
 
     @objc func logoutButtonPressed() {
-        router?.showConfirmationAlert(title: "Вы уверены что хотите выйти?", message: "Это действие необратимо") { [weak self] in
+        router?.showConfirmationAlert(title: String(localized: "Are_Sure_You_Want_Exit"), message: String(localized: "Onboarding_Alert_Message")) { [weak self] in
             self?.router?.showSignIn()
         }
     }

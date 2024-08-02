@@ -17,7 +17,7 @@ class RegistrationConfirmationViewModel {
     
     func sendConfirmationEmail(completion: @escaping (Result<String, Error>) -> Void) {
         guard let user = Auth.auth().currentUser else {
-            completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Пользователь не найден"])))
+            completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: String(localized: "User_Not_Found")])))
             return
         }
 
@@ -25,7 +25,7 @@ class RegistrationConfirmationViewModel {
             if let error = error {
                 completion(.failure(error))
             } else {
-                completion(.success("Ссылка для подтверждения отправлена на вашу почту."))
+                completion(.success(String(localized: "Confirmation_Email_Sent")))
             }
         }
     }
