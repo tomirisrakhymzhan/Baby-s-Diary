@@ -5,7 +5,6 @@
 //  Created by Томирис Рахымжан on 25/07/2024.
 //
 import UIKit
-import FirebaseAuth
 import SwiftMessages
 import Combine
 
@@ -44,17 +43,13 @@ class RegistrationConfirmationViewController: UIViewController {
     }
 
     @objc func sendLinkButtonPressed() {
-        guard let user = Auth.auth().currentUser else {
-            showMessage("Пользователь не найден", type: .error)
-            return
-        }
-
-        user.sendEmailVerification { [weak self] (error) in
-            if let error = error {
+        viewModel.sendConfirmationEmail { [weak self] result in
+            switch result {
+            case .success(let message):
+                self?.showMessage(message, type: .success)
+            case .failure(let error):
                 self?.showMessage(error.localizedDescription, type: .error)
-                return
             }
-            self?.showMessage("Ссылка для подтверждения отправлена на вашу почту.", type: .success)
         }
     }
     
@@ -70,12 +65,7 @@ class RegistrationConfirmationViewController: UIViewController {
 
     @objc func logoutButtonPressed() {
         router?.showConfirmationAlert(title: "Вы уверены что хотите выйти?", message: "Это действие необратимо") { [weak self] in
-            do {
-                try Auth.auth().signOut()
-                self?.router?.showSignIn()
-            } catch {
-                self?.showMessage("Не удалось выйти из аккаунта.", type: .error)
-            }
+            self?.router?.showSignIn()
         }
     }
 

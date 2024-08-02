@@ -14,6 +14,9 @@
 		BF394AC92C529428009C9945 /* RegistrationConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF394AC82C529428009C9945 /* RegistrationConfirmationView.swift */; };
 		BF394ADA2C5A8979009C9945 /* RegistrationConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF394AD92C5A8979009C9945 /* RegistrationConfirmationViewModel.swift */; };
 		BF394ADD2C5A89D1009C9945 /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = BF394ADC2C5A89D1009C9945 /* SwiftMessages */; };
+		BF394AE62C5D17A4009C9945 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF394AE52C5D17A4009C9945 /* ForgotPasswordView.swift */; };
+		BF394AE82C5D17B8009C9945 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF394AE72C5D17B8009C9945 /* ForgotPasswordViewController.swift */; };
+		BF394AEA2C5D17D0009C9945 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF394AE92C5D17D0009C9945 /* ForgotPasswordViewModel.swift */; };
 		BF43DB742C4A3802006FDB0D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF43DB732C4A3802006FDB0D /* SignInView.swift */; };
 		BF43DB762C4A3817006FDB0D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF43DB752C4A3817006FDB0D /* SignInViewController.swift */; };
 		BF43DB782C4A3A8C006FDB0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF43DB772C4A3A8C006FDB0D /* GoogleService-Info.plist */; };
@@ -64,6 +67,9 @@
 		BF394AC62C529415009C9945 /* RegistrationConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationConfirmationViewController.swift; sourceTree = "<group>"; };
 		BF394AC82C529428009C9945 /* RegistrationConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationConfirmationView.swift; sourceTree = "<group>"; };
 		BF394AD92C5A8979009C9945 /* RegistrationConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationConfirmationViewModel.swift; sourceTree = "<group>"; };
+		BF394AE52C5D17A4009C9945 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		BF394AE72C5D17B8009C9945 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		BF394AE92C5D17D0009C9945 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		BF43DB732C4A3802006FDB0D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		BF43DB752C4A3817006FDB0D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		BF43DB772C4A3A8C006FDB0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -135,6 +141,16 @@
 			path = Registration;
 			sourceTree = "<group>";
 		};
+		BF394AE42C5D1788009C9945 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				BF394AE52C5D17A4009C9945 /* ForgotPasswordView.swift */,
+				BF394AE72C5D17B8009C9945 /* ForgotPasswordViewController.swift */,
+				BF394AE92C5D17D0009C9945 /* ForgotPasswordViewModel.swift */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
 		BF43DB722C4A37CC006FDB0D /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +207,7 @@
 		BF69D1202C21872A0005B63B /* Baby's Diary */ = {
 			isa = PBXGroup;
 			children = (
+				BF394AE42C5D1788009C9945 /* ForgotPassword */,
 				BF394ABF2C528B85009C9945 /* Registration */,
 				BF43DB772C4A3A8C006FDB0D /* GoogleService-Info.plist */,
 				BF43DB722C4A37CC006FDB0D /* Authorization */,
@@ -397,6 +414,7 @@
 				BF69D15E2C27750F0005B63B /* OnboardingPageViewModel.swift in Sources */,
 				BF69D15C2C2774E80005B63B /* OnboardingPageModel.swift in Sources */,
 				BF54BA482C3BB60C00D8837E /* AddBabyViewController.swift in Sources */,
+				BF394AE62C5D17A4009C9945 /* ForgotPasswordView.swift in Sources */,
 				BF5BE7242C36F5CA00F946E7 /* UserDefaultsKeys.swift in Sources */,
 				BF69D1662C28982E0005B63B /* OnboardingView.swift in Sources */,
 				BF43DB862C4AB84B006FDB0D /* SignInViewModel.swift in Sources */,
@@ -410,6 +428,7 @@
 				BF43DB762C4A3817006FDB0D /* SignInViewController.swift in Sources */,
 				BF394AC12C528BB8009C9945 /* RegistrationView.swift in Sources */,
 				BF69D1222C21872A0005B63B /* AppDelegate.swift in Sources */,
+				BF394AEA2C5D17D0009C9945 /* ForgotPasswordViewModel.swift in Sources */,
 				BF54BA4E2C3D9BBE00D8837E /* LabeledTextFieldView.swift in Sources */,
 				BF394ADA2C5A8979009C9945 /* RegistrationConfirmationViewModel.swift in Sources */,
 				BF69D1682C29EBA90005B63B /* OnboardingModel.swift in Sources */,
@@ -420,6 +439,7 @@
 				BF394AC32C528BD1009C9945 /* RegistrationViewController.swift in Sources */,
 				BF69D16A2C29EBCC0005B63B /* OnboardingViewModel.swift in Sources */,
 				BF9B46432C367ACE00537669 /* AppRouter.swift in Sources */,
+				BF394AE82C5D17B8009C9945 /* ForgotPasswordViewController.swift in Sources */,
 				BF9B46322C3595B100537669 /* SleepViewController.swift in Sources */,
 				BF69D1592C2772B90005B63B /* OnboardingPageViewController.swift in Sources */,
 				BF69D1612C2777570005B63B /* OnboardingData.swift in Sources */,

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 protocol RouterProtocol: AnyObject {
     func start()
@@ -15,6 +16,7 @@ protocol RouterProtocol: AnyObject {
     func showAddBabyForm()
     func showRegistration()
     func showRegistrationConfirmation()
+    func showForgotPasswordView(email: String?)
 }
 
 class AppRouter: RouterProtocol {
@@ -73,6 +75,11 @@ class AppRouter: RouterProtocol {
     }
     
     func showSignIn() {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print(error.localizedDescription)
+        }
         let signInVC = SignInViewController()
         signInVC.router = self
         navigationController.setViewControllers([signInVC], animated: true)
@@ -93,5 +100,11 @@ class AppRouter: RouterProtocol {
         let regConfVC = RegistrationConfirmationViewController()
         regConfVC.router = self
         navigationController.setViewControllers([regConfVC], animated: true)
+    }
+    
+    func showForgotPasswordView(email: String?){
+        let forgotPasswordVC = ForgotPasswordViewController(email: email)
+        forgotPasswordVC.router = self
+        navigationController.pushViewController(forgotPasswordVC, animated: true)
     }
 }

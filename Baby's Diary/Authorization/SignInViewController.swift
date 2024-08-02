@@ -49,6 +49,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
 
     @objc private func forgotPasswordButtonTapped() {
         print("forgotPasswordButtonTapped")
+        router?.showForgotPasswordView(email: viewModel.email)
     }
 
     @objc private func registerButtonButtonTapped() {

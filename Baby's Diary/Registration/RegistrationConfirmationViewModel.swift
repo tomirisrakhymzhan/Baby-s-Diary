@@ -15,15 +15,19 @@ class RegistrationConfirmationViewModel {
         emailAddress.value = Auth.auth().currentUser?.email
     }
     
-    func sendConfirmationEmail(completion: @escaping (Bool) -> Void) {
-        Auth.auth().currentUser?.sendEmailVerification(completion: { error in
+    func sendConfirmationEmail(completion: @escaping (Result<String, Error>) -> Void) {
+        guard let user = Auth.auth().currentUser else {
+            completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Пользователь не найден"])))
+            return
+        }
+
+        user.sendEmailVerification { error in
             if let error = error {
-                print("Error sending email verification: \(error)")
-                completion(false)
+                completion(.failure(error))
             } else {
-                completion(true)
+                completion(.success("Ссылка для подтверждения отправлена на вашу почту."))
             }
-        })
+        }
     }
     
     func checkEmailVerified(completion: @escaping (Bool) -> Void) {
