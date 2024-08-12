@@ -49,18 +49,16 @@ class SignInView: UIView {
         textField.borderStyle = .roundedRect
         textField.layer.cornerRadius = 5
         textField.returnKeyType = .done
-        
-        // toggle password button
-        let toggleButton = UIButton(type: .custom)
-        toggleButton.setImage(UIImage(systemName: "eye"), for: .normal)
-        toggleButton.setImage(UIImage(systemName: "eye.slash"), for: .selected)
-        toggleButton.tintColor = .systemPurple
-        toggleButton.addTarget(self, action: #selector(togglePasswordVisibility), for: .touchUpInside)
-        textField.rightView = toggleButton
-        textField.rightViewMode = .always
-        
         return textField
-        }()
+    }()
+    
+    let toggleButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(systemName: "eye"), for: .normal)
+        button.setImage(UIImage(systemName: "eye.slash"), for: .selected)
+        button.tintColor = .systemPurple
+        return button
+    }()
         
     let passwordErrorLabel: UILabel = {
         let label = UILabel()
@@ -147,6 +145,8 @@ class SignInView: UIView {
         mainStackView.addArrangedSubview(emailTextField)
         mainStackView.addArrangedSubview(emailErrorLabel)
         mainStackView.addArrangedSubview(passwordTextField)
+        passwordTextField.rightView = toggleButton
+        passwordTextField.rightViewMode = .always
         mainStackView.addArrangedSubview(passwordErrorLabel)
         mainStackView.addArrangedSubview(signInButton)
         mainStackView.addArrangedSubview(generalErrorLabel)
@@ -181,11 +181,6 @@ class SignInView: UIView {
         noAccountLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         
         
-    }
-    
-    @objc private func togglePasswordVisibility(_ sender: UIButton) {
-        sender.isSelected.toggle()
-        passwordTextField.isSecureTextEntry.toggle()
     }
 }
 

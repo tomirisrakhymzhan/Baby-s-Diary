@@ -7,6 +7,8 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseAuthCombineSwift
+import Combine
 
 protocol RouterProtocol: AnyObject {
     func start()
@@ -26,18 +28,21 @@ class AppRouter: RouterProtocol {
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        self.handleAuth()
     }
     
+    private var cancellables = Set<AnyCancellable>()
+    
     func start() {
-        // удалить все из юзердефолтс, это временный код
-        let defaults = UserDefaults.standard
-        if let bundleIdentifier = Bundle.main.bundleIdentifier {
-            defaults.removePersistentDomain(forName: bundleIdentifier)
-        }
+//        // удалить все из юзердефолтс, это временный код
+//        let defaults = UserDefaults.standard
+//        if let bundleIdentifier = Bundle.main.bundleIdentifier {
+//            defaults.removePersistentDomain(forName: bundleIdentifier)
+//        }
 
         // проверка прохождения онбординга
         if UserDefaults.standard.bool(forKey: "isOnboardingSeen") {
-            showMainScreen()
+            showSignIn()
         } else {
             showOnboarding()
         }
@@ -75,11 +80,6 @@ class AppRouter: RouterProtocol {
     }
     
     func showSignIn() {
-        do {
-            try Auth.auth().signOut()
-        } catch {
-            print(error.localizedDescription)
-        }
         let signInVC = SignInViewController()
         signInVC.router = self
         navigationController.setViewControllers([signInVC], animated: true)
@@ -106,5 +106,23 @@ class AppRouter: RouterProtocol {
         let forgotPasswordVC = ForgotPasswordViewController(email: email)
         forgotPasswordVC.router = self
         navigationController.pushViewController(forgotPasswordVC, animated: true)
+    }
+    
+    private func handleAuth() {
+        Auth.auth().authStateDidChangePublisher()
+            .receive(on: DispatchQueue.main)
+            .sink {[weak self] user in
+                guard let self else { return }
+                if let user {
+                    if user.isEmailVerified {
+                        self.showSignIn()
+                    } else {
+                        self.showRegistrationConfirmation()
+                    }
+                } else {
+                    self.showSignIn()
+                }
+            }
+            .store(in: &cancellables)
     }
 }

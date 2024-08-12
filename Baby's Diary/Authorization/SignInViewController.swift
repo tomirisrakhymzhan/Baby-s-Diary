@@ -41,6 +41,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         signInView.signInButton.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
         signInView.forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
         signInView.registerButton.addTarget(self, action: #selector(registerButtonButtonTapped), for: .touchUpInside)
+        signInView.toggleButton.addTarget(self, action: #selector(togglePasswordVisibility), for: .touchUpInside)
+
     }
 
     @objc private func signInButtonTapped() {
@@ -55,6 +57,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @objc private func registerButtonButtonTapped() {
         print("registerButtonButtonTapped")
         router?.showRegistration()
+    }
+    
+    @objc private func togglePasswordVisibility(_ sender: UIButton) {
+        sender.isSelected.toggle()
+        self.signInView.passwordTextField.isSecureTextEntry.toggle()
     }
 
     private func setupBindings() {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF340B892C64811700534E18 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = BF340B882C64811700534E18 /* FirebaseAuthCombine-Community */; };
 		BF394AC12C528BB8009C9945 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF394AC02C528BB8009C9945 /* RegistrationView.swift */; };
 		BF394AC32C528BD1009C9945 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF394AC22C528BD1009C9945 /* RegistrationViewController.swift */; };
 		BF394AC52C528C03009C9945 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF394AC42C528C03009C9945 /* RegistrationViewModel.swift */; };
@@ -122,6 +123,7 @@
 				BF43DB7C2C4A57BC006FDB0D /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				BF43DB822C4A57BC006FDB0D /* FirebaseAppCheck in Frameworks */,
 				BF43DB802C4A57BC006FDB0D /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				BF340B892C64811700534E18 /* FirebaseAuthCombine-Community in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +342,7 @@
 				BF43DB812C4A57BC006FDB0D /* FirebaseAppCheck */,
 				BF43DB832C4A5911006FDB0D /* FirebaseAuth */,
 				BF394ADC2C5A89D1009C9945 /* SwiftMessages */,
+				BF340B882C64811700534E18 /* FirebaseAuthCombine-Community */,
 			);
 			productName = "Baby's Diary";
 			productReference = BF69D11E2C21872A0005B63B /* Baby's Diary.app */;
@@ -677,6 +680,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BF340B882C64811700534E18 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF54BA432C3BB26700D8837E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
 		BF394ADC2C5A89D1009C9945 /* SwiftMessages */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BF394ADB2C5A89D1009C9945 /* XCRemoteSwiftPackageReference "SwiftMessages" */;

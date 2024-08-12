@@ -98,6 +98,9 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         registerView.emailTextField.addTarget(self, action: #selector(emailTextFieldChanged), for: .editingChanged)
         registerView.passwordTextField1.addTarget(self, action: #selector(passwordTextField1Changed), for: .editingChanged)
         registerView.passwordTextField2.addTarget(self, action: #selector(passwordTextField2Changed), for: .editingChanged)
+        registerView.toggleButton1.addTarget(self, action: #selector(togglePasswordVisibility), for: .touchUpInside)
+        registerView.toggleButton2.addTarget(self, action: #selector(togglePasswordVisibility), for: .touchUpInside)
+
     }
 
     @objc private func emailTextFieldChanged() {
@@ -110,6 +113,11 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     
     @objc private func passwordTextField2Changed() {
         viewModel.password2 = registerView.passwordTextField2.text ?? ""
+    }
+    
+    @objc private func togglePasswordVisibility(_ sender: UIButton) {
+        self.registerView.passwordTextField1.isSecureTextEntry.toggle()
+        self.registerView.passwordTextField2.isSecureTextEntry.toggle()
     }
     
     private func setupTextFieldDelegates() {

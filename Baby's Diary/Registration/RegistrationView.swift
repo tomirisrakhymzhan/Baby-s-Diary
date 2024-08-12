@@ -48,16 +48,34 @@ class RegistrationView: UIView {
         textField.borderStyle = .roundedRect
         textField.layer.cornerRadius = 5
         textField.returnKeyType = .done
+        textField.isSecureTextEntry = true
         return textField
     }()
     
+    let toggleButton1: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(systemName: "eye"), for: .normal)
+        button.setImage(UIImage(systemName: "eye.slash"), for: .selected)
+        button.tintColor = .systemPurple
+        return button
+    }()
+        
     let passwordTextField2: UITextField = {
         let textField = UITextField()
         textField.placeholder = String(localized: "Repeat_Password")
         textField.borderStyle = .roundedRect
         textField.layer.cornerRadius = 5
+        textField.isSecureTextEntry = true
         textField.returnKeyType = .done
         return textField
+    }()
+    
+    let toggleButton2: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(systemName: "eye"), for: .normal)
+        button.setImage(UIImage(systemName: "eye.slash"), for: .selected)
+        button.tintColor = .systemPurple
+        return button
     }()
         
     let passwordErrorLabel: UILabel = {
@@ -134,7 +152,11 @@ class RegistrationView: UIView {
         mainStackView.addArrangedSubview(emailTextField)
         mainStackView.addArrangedSubview(emailErrorLabel)
         mainStackView.addArrangedSubview(passwordTextField1)
+        passwordTextField1.rightView = toggleButton1
+        passwordTextField1.rightViewMode = .always
         mainStackView.addArrangedSubview(passwordTextField2)
+        passwordTextField2.rightView = toggleButton2
+        passwordTextField2.rightViewMode = .always
         mainStackView.addArrangedSubview(passwordErrorLabel)
         mainStackView.addArrangedSubview(registerButton)
         mainStackView.addArrangedSubview(generalErrorLabel)
