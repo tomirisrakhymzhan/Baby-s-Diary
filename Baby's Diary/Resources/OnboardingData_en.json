@@ -1,0 +1,23 @@
+[
+    {
+        "imageName": "welcome",
+        "title": "Welcome!",
+        "description": "Our app will help you improve your child's sleep quality!"
+    },
+    {
+        "imageName": "sleeping_baby",
+        "title": "Sleep",
+        "description": "With the sleep tracking feature, you can easily add and manage your child's sleep time by recording the start and end of each period. This helps to monitor sleep patterns and quality, analyze the data, and improve your child's sleep habits."
+    },
+    {
+        "imageName": "statistics",
+        "title": "Statistics",
+        "description": "With the sleep statistics feature, you can track and analyze your child's sleep patterns by recording data. Share these statistics with experts for professional recommendations."
+    },
+    {
+        "imageName": "artificial_intelligence",
+        "title": "Consultation",
+        "description": "With the AI consultation feature, you will receive personalized recommendations based on your child's sleep statistics. Using OpenAI algorithms, the app analyzes the data and suggests solutions to improve sleep quality."
+    }
+]
+
